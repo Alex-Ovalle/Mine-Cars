@@ -1,0 +1,121 @@
+23:15:01 07-04-2024 - frodobaggins Signed out
+23:21:24 07-04-2024 - frodobaggins logged in
+23:21:32 07-04-2024 - frodobaggins displayed all cars
+23:21:33 07-04-2024 - frodobaggins displayed all cars
+23:21:34 07-04-2024 - frodobaggins displayed all cars
+23:21:34 07-04-2024 - frodobaggins displayed all cars
+23:21:34 07-04-2024 - frodobaggins displayed all cars
+23:22:09 07-04-2024 - frodobaggins displayed all cars
+23:22:09 07-04-2024 - frodobaggins displayed all cars
+23:22:09 07-04-2024 - frodobaggins filtered by new car
+23:22:10 07-04-2024 - frodobaggins purchased a car
+23:22:10 07-04-2024 - frodobaggins viewed ticket
+23:22:12 07-04-2024 - frodobaggins Signed out
+23:22:24 07-04-2024 - thor logged in
+23:22:25 07-04-2024 - thor displayed all cars
+23:22:25 07-04-2024 - thor filtered by new car
+23:22:26 07-04-2024 - thor displayed all cars
+23:22:27 07-04-2024 - thor displayed all cars
+23:22:27 07-04-2024 - thor purchased a car
+23:22:28 07-04-2024 - thor Signed out
+23:22:43 07-04-2024 - frodobaggins logged in
+23:22:44 07-04-2024 - frodobaggins displayed all cars
+23:22:44 07-04-2024 - frodobaggins displayed all cars
+23:22:45 07-04-2024 - frodobaggins displayed all cars
+23:22:46 07-04-2024 - frodobaggins viewed ticket
+23:22:46 07-04-2024 - frodobaggins Signed out
+23:28:25 07-04-2024 - frodobaggins logged in
+23:28:25 07-04-2024 - frodobaggins displayed all cafdwawdwrs
+23:29:12 07-04-2024 - frodobaggins Signed out
+23:29:20 07-04-2024 - frodobaggins logged in
+23:29:21 07-04-2024 - frodobaggins displayed all cafdwawdwrs
+23:30:02 07-04-2024 - frodobaggins Signed out
+23:48:10 07-04-2024 - frodobaggins logged in
+23:48:15 07-04-2024 - frodobaggins filtered by new car
+23:48:25 07-04-2024 - frodobaggins displayed all cars
+23:48:48 07-04-2024 - frodobaggins Signed out
+23:49:04 07-04-2024 - frodobaggins logged in
+23:49:07 07-04-2024 - frodobaggins filtered by new cars
+23:49:27 07-04-2024 - frodobaggins filtered by new cars
+23:50:59 07-04-2024 - frodobaggins viewed ticket
+23:50:59 07-04-2024 - frodobaggins Signed out
+23:51:32 07-04-2024 - frodobaggins logged in
+23:51:34 07-04-2024 - frodobaggins filtered by new cars
+23:52:13 07-04-2024 - frodobaggins Signed out
+23:52:23 07-04-2024 - frodobaggins logged in
+23:52:24 07-04-2024 - frodobaggins filtered by used cars
+23:54:43 07-04-2024 - frodobaggins Signed out
+21:16:51 08-04-2024 - spider-man logged in
+21:17:43 08-04-2024 - spider-man Signed out
+21:18:17 08-04-2024 - spider-man logged in
+21:18:22 08-04-2024 - spider-man displayed all cars
+21:18:25 08-04-2024 - spider-man filtered by new cars
+21:18:28 08-04-2024 - spider-man purchased a car
+21:18:32 08-04-2024 - spider-man Signed out
+21:19:18 08-04-2024 - spider-man logged in
+21:20:55 08-04-2024 - spider-man Signed out
+21:21:02 08-04-2024 - spider-man logged in
+21:22:08 08-04-2024 - spider-man Signed out
+21:24:12 08-04-2024 - spider-man logged in
+21:24:31 08-04-2024 - spider-man Signed out
+21:24:37 08-04-2024 - spider-man logged in
+21:24:48 08-04-2024 - spider-man Signed out
+21:24:54 08-04-2024 - spider-man logged in
+21:28:08 08-04-2024 - spider-man Signed out
+21:32:02 08-04-2024 - spider-man logged in
+21:32:14 08-04-2024 - spider-man Signed out
+21:32:21 08-04-2024 - spider-man logged in
+21:34:24 08-04-2024 - spider-man Signed out
+21:34:31 08-04-2024 - spider-man logged in
+21:36:00 08-04-2024 - spider-man Signed out
+21:36:10 08-04-2024 - spider-man logged in
+21:39:02 08-04-2024 - spider-man Signed out
+21:39:08 08-04-2024 - spider-man logged in
+21:39:26 08-04-2024 - spider-man Signed out
+21:39:34 08-04-2024 - spider-man logged in
+21:39:57 08-04-2024 - spider-man Signed out
+21:40:02 08-04-2024 - spider-man logged in
+21:40:31 08-04-2024 - spider-man Signed out
+21:40:36 08-04-2024 - spider-man logged in
+21:40:50 08-04-2024 - spider-man Signed out
+21:40:55 08-04-2024 - spider-man logged in
+21:40:57 08-04-2024 - spider-man Signed out
+21:41:13 08-04-2024 - spider-man logged in
+21:41:15 08-04-2024 - spider-man displayed all cars
+21:41:17 08-04-2024 - spider-man purchased a car
+21:41:20 08-04-2024 - spider-man Signed out
+21:42:03 08-04-2024 - spider-man logged in
+21:44:20 08-04-2024 - spider-man Signed out
+21:44:27 08-04-2024 - spider-man logged in
+21:45:38 08-04-2024 - spider-man Signed out
+21:46:37 08-04-2024 - spider-man logged in
+21:50:26 08-04-2024 - spider-man Signed out
+21:51:26 08-04-2024 - spider-man logged in
+22:38:14 08-04-2024 - spider-man Signed out
+23:39:21 08-04-2024 - spider-man logged in
+23:39:43 08-04-2024 - spider-man filtered by new cars
+23:44:25 08-04-2024 - spider-man logged in
+23:44:40 08-04-2024 - spider-man logged in
+23:47:00 08-04-2024 - spider-man logged in
+23:48:34 08-04-2024 - spider-man logged in
+23:49:03 08-04-2024 - spider-man logged in
+23:49:33 08-04-2024 - spider-man logged in
+23:49:47 08-04-2024 - spider-man logged in
+23:49:48 08-04-2024 - spider-man purchased a car
+23:51:00 08-04-2024 - spider-man viewed ticket
+23:51:19 08-04-2024 - spider-man Signed out
+23:51:37 08-04-2024 - spider-man logged in
+23:51:40 08-04-2024 - spider-man purchased a car
+23:51:54 08-04-2024 - spider-man purchased a car
+23:51:56 08-04-2024 - spider-man viewed ticket
+23:52:54 08-04-2024 - spider-man Signed out
+23:53:02 08-04-2024 - spider-man logged in
+23:53:05 08-04-2024 - spider-man purchased a car
+23:53:06 08-04-2024 - spider-man viewed ticket
+23:55:36 08-04-2024 - spider-man Signed out
+14:36:10 09-04-2024 - johnwick logged in
+14:36:13 09-04-2024 - johnwick displayed all cars
+14:36:22 09-04-2024 - johnwick filtered by new cars
+14:36:56 09-04-2024 - johnwick purchased a car
+14:37:04 09-04-2024 - johnwick viewed ticket
+14:37:14 09-04-2024 - johnwick Signed out
