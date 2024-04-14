@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Date; 
 
 
+
 public class UserInterface{
 
     private String username;
@@ -21,28 +22,33 @@ public class UserInterface{
 
         System.out.print("Username: ");
         username = scanner.nextLine();
-        user.setUsername(username);
+        //user.setUsername(username);
 
         System.out.print("Password: ");
         String password = scanner.nextLine();
-        user.setPassword(password);
+        //user.setPassword(password);
+        //scanner.close();
         
         UserDatabase userDB = new UserDatabase();
+        try{
+            if(userDB.initializeUser(user, username, password)){
 
-        if(user.login(username, password, userDB)){
-            userDB.fillUserDetails(user, username, password);
+                System.out.println("\nWelcome, " + user.getFullName() + "!");
 
-            System.out.println("\nWelcome, " + user.getFullName() + "!");
+                Log userLog = new Log(username);
+                userLog.write_log(0);
 
-            Log userLog = new Log(username);
-            userLog.write_log(0);
+                System.out.println("----------------------");
+                this.show_menu();
 
-            System.out.println("----------------------");
-            this.show_menu();
+            }else
+                System.out.println("Incorrect login, please try again.\n");
+                this.user_login();
 
-        }else
-            System.out.println("Incorrect login, please try again.\n");
-            this.user_login();
+        }catch(IOException e){
+            e.printStackTrace();
+            System.out.println("Error reading user data file.");
+        }
     }
 
     public void show_menu(){

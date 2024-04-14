@@ -1,4 +1,4 @@
-public abstract class Person {
+public abstract class Person {  // make into interface that user and admin will use
     private String fullName;
 
     // Constructor
