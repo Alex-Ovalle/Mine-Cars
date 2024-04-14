@@ -119,3 +119,15 @@
 14:36:56 09-04-2024 - johnwick purchased a car
 14:37:04 09-04-2024 - johnwick viewed ticket
 14:37:14 09-04-2024 - johnwick Signed out
+20:53:51 13-04-2024 - frodobaggins logged in
+20:54:02 13-04-2024 - frodobaggins Signed out
+20:56:02 13-04-2024 - frodobaggins logged in
+20:56:07 13-04-2024 - frodobaggins filtered by used cars
+20:56:09 13-04-2024 - frodobaggins purchased a car
+20:56:13 13-04-2024 - frodobaggins viewed ticket
+20:56:20 13-04-2024 - frodobaggins Signed out
+20:56:28 13-04-2024 - frodobaggins logged in
+20:56:40 13-04-2024 - frodobaggins viewed ticket
+20:56:45 13-04-2024 - frodobaggins purchased a car
+20:56:53 13-04-2024 - frodobaggins viewed ticket
+20:57:03 13-04-2024 - frodobaggins Signed out
