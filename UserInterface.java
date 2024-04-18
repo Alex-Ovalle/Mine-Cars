@@ -22,12 +22,9 @@ public class UserInterface{
 
         System.out.print("Username: ");
         username = scanner.nextLine();
-        //user.setUsername(username);
 
         System.out.print("Password: ");
-        String password = scanner.nextLine();
-        //user.setPassword(password);
-        //scanner.close();
+        password = scanner.nextLine();
         
         UserDatabase userDB = new UserDatabase();
         try{

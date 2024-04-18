@@ -55,7 +55,7 @@ public class RunShop {
                         System.out.println("Thank you for visiting us, goodbye!\n");
                         System.exit(0);
                     default:
-                        System.out.println("Invalid choice. Please try again: "); // show options again in future code?
+                        System.out.println("Invalid choice. Please try again: ");
                         break;
                 }
             }

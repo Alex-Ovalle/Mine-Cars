@@ -14,7 +14,7 @@ public class UserDatabase {
     private Map<String, String> userCredentials; // Maps username to password
 
     public UserDatabase() {
-        userCredentials = new HashMap<>();
+        userCredentials = new HashMap<>();  // <------------ delete?
         loadUserCredentials();              
     }
 
@@ -49,7 +49,7 @@ public class UserDatabase {
             br.close();
         }
     }
-
+    /*  <------------------------------------------------------------------------------ delete?
     private void loadUserCredentials() {
         try (BufferedReader br = new BufferedReader(new FileReader(USER_DATA_FILE))) {
             String line;
@@ -83,7 +83,7 @@ public class UserDatabase {
             System.out.println("Error reading user data file.");
         }
     }
-
+    */
     public void carBought(User user, double carPrice) throws IOException{   // redo with objects instead of file
         BufferedReader reader = new BufferedReader(new FileReader("user_data.csv"));
         BufferedWriter writer = new BufferedWriter(new FileWriter("tmp" + "user_data.csv"));
@@ -97,7 +97,7 @@ public class UserDatabase {
             int id = Integer.parseInt(parts[0]); // checking current line id to compare to given car id
             if(id == userID){
                 double userMoney = Double.parseDouble(parts[3]);
-                double newUserBudget = userMoney - carPrice; 
+                double newUserBudget = userMoney - carPrice;
                 user.setMoneyAvailable(newUserBudget);
             }
         
@@ -109,34 +109,6 @@ public class UserDatabase {
         reader.close();
         writer.close();
     }
-
-
-    /*public void carBought(User user, Car car) throws IOException{   // redo with objects instead of file
-        BufferedReader reader = new BufferedReader(new FileReader("user_data.csv"));
-        BufferedWriter writer = new BufferedWriter(new FileWriter("tmp" + "user_data.csv"));
-
-        String line;
-        int userID = user.getID();
-        reader.readLine();
-        while ((line = reader.readLine()) != null) {
-            String[] parts = line.split(",");
-
-            int id = Integer.parseInt(parts[0]); // checking current line id to compare to given car id
-            if(id == userID){
-                double userMoney = Double.parseDouble(parts[3]);
-                double newUserBudget = userMoney - carPrice; 
-                user.setMoneyAvailable(newUserBudget);
-            }
-        
-            // Write the modified line to the temporary file
-            writer.write(String.join(",", parts));
-            writer.newLine();
-        }
-
-        reader.close();
-        writer.close();
-    }
-    */
 
     public boolean validateCredentials(String username, String password) {
         String storedPassword = userCredentials.get(username);

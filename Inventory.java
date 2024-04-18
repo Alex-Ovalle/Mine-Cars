@@ -5,8 +5,6 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
- //hello im here 
- //whats up
 
 public class Inventory {
     private List<Car> cars; // List to hold cars
@@ -16,14 +14,14 @@ public class Inventory {
         this.cars = new ArrayList<>();
         loadCarsFromCSV("car_data.csv");
     }
-
+    
     // Add a car to the inventory
     public void addCar(Car car) {
         this.cars.add(car);
     }
 
-    // Remove a car from the inventory by ID
-    public boolean removeCar(int carID) {
+    // Remove a car from the inventory by ID        
+    public boolean removeCar(int carID) {                        // <-- needs updating
         return cars.removeIf(car -> car.getId() == carID);
     }
 
@@ -67,7 +65,7 @@ public class Inventory {
         }
     }
 
-    public double carBought(User user, int carID) throws IOException{
+    public double carBought(User user, int carID) throws IOException{       // <-- implement in user instead (?)
         BufferedReader reader = new BufferedReader(new FileReader("car_data.csv"));
         BufferedWriter writer = new BufferedWriter(new FileWriter("tmp" + "car_data.csv"));
 

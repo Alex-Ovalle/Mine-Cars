@@ -22,7 +22,7 @@ public class User extends Person {
         this.minerCarsMembership = minerCarsMembership;
         this.username = username;
         this.password = password;
-        tickets = new ArrayList<>(); // Initialize the tickets list
+        this.tickets = new ArrayList<>(); // Initialize the tickets list
     }
 
     // Method to view cars
