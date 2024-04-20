@@ -131,3 +131,22 @@
 20:56:45 13-04-2024 - frodobaggins purchased a car
 20:56:53 13-04-2024 - frodobaggins viewed ticket
 20:57:03 13-04-2024 - frodobaggins Signed out
+19:57:58 19-04-2024 - captainjacksparrow logged in
+19:57:59 19-04-2024 - captainjacksparrow displayed all cars
+20:12:49 19-04-2024 - captainjacksparrow Signed out
+20:13:04 19-04-2024 - captainjacksparrow logged in
+20:13:05 19-04-2024 - captainjacksparrow displayed all cars
+20:13:46 19-04-2024 - captainjacksparrow Signed out
+20:14:27 19-04-2024 - captainjacksparrow logged in
+20:14:28 19-04-2024 - captainjacksparrow displayed all cars
+20:17:42 19-04-2024 - captainjacksparrow Signed out
+20:46:19 19-04-2024 - captainjacksparrow logged in
+20:46:21 19-04-2024 - captainjacksparrow displayed all cars
+20:48:10 19-04-2024 - captainjacksparrow Signed out
+20:50:36 19-04-2024 - captainjacksparrow logged in
+20:50:37 19-04-2024 - captainjacksparrow displayed all cars
+20:52:47 19-04-2024 - captainjacksparrow logged in
+20:52:48 19-04-2024 - captainjacksparrow displayed all cars
+20:56:13 19-04-2024 - captainjacksparrow Signed out
+20:57:35 19-04-2024 - captainjacksparrow logged in
+20:57:37 19-04-2024 - captainjacksparrow displayed all cars

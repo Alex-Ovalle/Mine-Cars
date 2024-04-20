@@ -60,6 +60,14 @@ public class Inventory {
                 
             while ((line = br.readLine()) != null) {
                 String[] carFields = line.split(",");
+
+                // Determine if the "hasTurbo" field is available and properly listed in the current car entry
+                boolean hasTurbo = false; // Default to false
+                if (hasTurboIndex > -1 && hasTurboIndex < carFields.length) {
+                    String turboValue = carFields[hasTurboIndex].trim().toLowerCase();
+                    hasTurbo = turboValue.equals("yes"); // Sets hasTurbo to true if the value is "yes"
+                }
+                
                 
                 switch(carFields[carTypeIndex]){
                     case "Hatchback":
@@ -76,7 +84,7 @@ public class Inventory {
                             carFields[vinIndex], 
                             Double.parseDouble(carFields[priceIndex]), 
                             Integer.parseInt(carFields[carsAvailableIndex]), 
-                            Boolean.parseBoolean(carFields[hasTurboIndex])  // <---- BUG PROBABLY
+                            hasTurbo
                         );
                         this.addCar(hatchback);
                         break;
@@ -94,7 +102,7 @@ public class Inventory {
                             carFields[vinIndex], 
                             Double.parseDouble(carFields[priceIndex]), 
                             Integer.parseInt(carFields[carsAvailableIndex]), 
-                            Boolean.parseBoolean(carFields[hasTurboIndex])
+                            hasTurbo
                         );
                         this.addCar(suv);
                         break;
@@ -112,7 +120,7 @@ public class Inventory {
                             carFields[vinIndex], 
                             Double.parseDouble(carFields[priceIndex]), 
                             Integer.parseInt(carFields[carsAvailableIndex]), 
-                            Boolean.parseBoolean(carFields[hasTurboIndex])
+                            hasTurbo
                         );
                         this.addCar(sedan);
                         break;
@@ -130,7 +138,7 @@ public class Inventory {
                             carFields[vinIndex], 
                             Double.parseDouble(carFields[priceIndex]), 
                             Integer.parseInt(carFields[carsAvailableIndex]), 
-                            Boolean.parseBoolean(carFields[hasTurboIndex])
+                            hasTurbo
                         );
                         this.addCar(pickup);
                         break;

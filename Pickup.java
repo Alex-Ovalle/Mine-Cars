@@ -157,7 +157,8 @@ public class Pickup implements Car {
                "  Transmission: " + getTransmission() + "\n" +
                "  VIN: " + getVin() + "\n" +
                "  Price: $" + getPrice() + "\n" +
-               "  Cars Available: " + getCarsAvailable();
+               "  Cars Available: " + getCarsAvailable() + "\n" +
+               "  Has Turbo: " + (getTurbo() ? "Yes" : "No");
     }
 
     public String printCSV(){  // update
