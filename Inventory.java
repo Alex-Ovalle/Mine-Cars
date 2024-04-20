@@ -1,3 +1,8 @@
+/**
+* The inventory class lists all the cars available in the dealership,
+* adds and removes cars available.
+*/
+
 import java.util.ArrayList;
 import java.util.List;
 import java.io.BufferedReader;
@@ -5,31 +10,42 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+ //hello im here
 
 public class Inventory {
     private List<Car> cars; // List to hold cars
 
+    /**
+    * Default constructor for inventory in the dealership.
+    */
+    
     // Constructor
     public Inventory() {
         this.cars = new ArrayList<>();
         loadCarsFromCSV("car_data.csv");
     }
-    
+
     // Add a car to the inventory
     public void addCar(Car car) {
         this.cars.add(car);
     }
 
-    // Remove a car from the inventory by ID        
-    public boolean removeCar(int carID) {                        // <-- needs updating
+    // Remove a car from the inventory by ID
+    public boolean removeCar(int carID) {
         return cars.removeIf(car -> car.getId() == carID);
     }
-
+    /**
+     * Gets the list of all the cars in the inventory.
+     * @return the list of cars.
+     */
     // Get a list of all cars in the inventory
     public List<Car> getAllCars() {
         return new ArrayList<>(this.cars); // Returning a copy of the list to protect internal data
     }
-
+    /**
+     * Reads the data from the CSV file.
+     * @param csvFile data from CSV file.
+     */
     // Read car data from CSV file
     public void loadCarsFromCSV(String csvFile) {
         String line;
@@ -65,7 +81,7 @@ public class Inventory {
         }
     }
 
-    public double carBought(User user, int carID) throws IOException{       // <-- implement in user instead (?)
+    public double carBought(User user, int carID) throws IOException{
         BufferedReader reader = new BufferedReader(new FileReader("car_data.csv"));
         BufferedWriter writer = new BufferedWriter(new FileWriter("tmp" + "car_data.csv"));
 
@@ -97,7 +113,9 @@ public class Inventory {
             return carPrice;
         return -1;
     }
-
+    /**
+     * Displays the cars available in the inventory.
+     */
     // Display all cars in the inventory
     public void displayInventory() {
         for (Car car : this.cars) {
