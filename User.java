@@ -10,7 +10,7 @@ public class User extends Person {
     private boolean minerCarsMembership;
     private String username;
     private String password;
-    public static List<Ticket> tickets; // Field to store tickets
+    private static List<Ticket> tickets; // Field to store tickets
 
     // Constructor
     public User(String fullName, int ID, double moneyAvailable, int carsPurchased,
@@ -46,10 +46,7 @@ public class User extends Person {
     
             // Create and add a ticket
             Ticket newTicket = new Ticket(car); // ticket like this?
-            tickets.add(newTicket);
             this.addTicket(newTicket);
-            
-            // ADD log
             return true;
         }
         return false;

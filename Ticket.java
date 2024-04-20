@@ -1,5 +1,6 @@
 import java.time.LocalDateTime;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 
 public class Ticket {
     // Attributes to store the car ID, model, purchase amount, and the date of purchase
@@ -10,7 +11,7 @@ public class Ticket {
     private Car car;
 
     // Constructor to initialize a new Ticket object with provided details
-    public Ticket(Car car) {   // maybe just car?
+    public Ticket(Car car) {
         this.car = car;
         setPurchaseDate();
     }
@@ -40,17 +41,16 @@ public class Ticket {
     }
 
     // Method to print ticket in a formatted manner, displaying all relevant purchase details
-    public void printTicket() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        String formattedDate = formatter.format(this.purchaseDate); // Formatting the date
-        
+    public String printTicket() {
+        DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy");
+
         // Printing the ticket with all details in a clear format
-        System.out.println("--------- TICKET ---------");
-        System.out.println("Car ID: " + this.car.getId());
-        System.out.println("Car Model: " + this.car.getModel());
-        System.out.println("Purchase Amount: $" + String.format("%.2f", this.car.getPrice()));
-        System.out.println("Purchase Date: " + formattedDate);
-        System.out.println("--------------------------");
+        return("--------- TICKET ---------\n" +
+        "Car ID: " + this.car.getId() + 
+        "\nCar Model: " + this.car.getModel() +
+        "\nPurchase Amount: $" + String.format("%.2f", this.car.getPrice()) +
+        "\nPurchase Date: " + purchaseDate.format(myFormat) +
+        "\n--------------------------");
     }
 }
 

@@ -5,11 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-<<<<<<< Updated upstream
 import java.util.Arrays;
-=======
- 
->>>>>>> Stashed changes
 
 public class Inventory {
     private List<Car> cars; // List to hold cars
@@ -162,7 +158,7 @@ public class Inventory {
         }
     }
 
-    // updateFile(){ 
+    // updateFile(){                    ,<---------------------------------------------------------------
     //     write to new_car_data.csv
     //     for loop of list
 

@@ -138,19 +138,17 @@ public class UserInterface{
         
         if(user.purchaseCar(car)){
             System.out.println("Congratulations, you have purchased car: " + carID + "!\nYour new budget is: " + user.getMoneyAvailable());
-            Ticket newTicket = new Ticket(car);
-            user.addTicket(newTicket);
+            Log userLog = new Log(username);
+            userLog.write_log(3); // <- make more specific?
         }else
             System.out.println("You do not have the funds or this car is no longer available!\n Returning to main menu.");    // eventually specify
-        show_menu(); // start over
     }
-
 
     
     private void view_tickets(){
         System.out.println("Viewing tickets...");
-        for(Ticket ticket: User.viewTickets()){
-            System.out.print(ticket + "\n");
+        for(Ticket ticket: user.viewTickets()){
+            System.out.print(ticket.printTicket() + "\n");
         }
     }
 }
