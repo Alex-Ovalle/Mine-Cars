@@ -1,4 +1,8 @@
 public interface Car {
+    /**
+     * 
+     * @return
+     */
     // Getter methods
     int getId();
     String getModel();
@@ -12,9 +16,17 @@ public interface Car {
     double getPrice();
     int getCarsAvailable();
     boolean getTurbo();
+    /**
+     * 
+     * @return
+     */
     // Print all details
     String getDetails();
     boolean isAvailable();
+    /**
+     * 
+     * @param id
+     */
     // Setter methods
     void setId(int id);
     void setModel(String model);
