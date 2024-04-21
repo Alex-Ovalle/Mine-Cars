@@ -53,6 +53,8 @@ public class RunShop {
                         break;
                     case 3:
                         System.out.println("Thank you for visiting us, goodbye!\n");
+                        // updateCarFile();
+                        // updateUserFile();
                         System.exit(0);
                     default:
                         System.out.println("Invalid choice. Please try again: ");

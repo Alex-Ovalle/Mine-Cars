@@ -10,19 +10,20 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
- //hello im here
+import java.util.Arrays;
 
 public class Inventory {
     private List<Car> cars; // List to hold cars
 
-    /**
-    * Default constructor for inventory in the dealership.
-    */
-    
     // Constructor
     public Inventory() {
         this.cars = new ArrayList<>();
-        loadCarsFromCSV("car_data.csv");
+        try{
+            loadCarsFromCSV("car_data_new.csv");
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("An error occured reading car file.");
+        }
     }
 
     // Add a car to the inventory
@@ -47,71 +48,117 @@ public class Inventory {
      * @param csvFile data from CSV file.
      */
     // Read car data from CSV file
-    public void loadCarsFromCSV(String csvFile) {
+    public void loadCarsFromCSV(String csvFile) throws IOException{
         String line;
-        String csvSplitBy = ",";
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            // Skip the header line
-            br.readLine();
-
+        BufferedReader br = new BufferedReader(new FileReader(csvFile));
+        try {
+            String headerLine = br.readLine();  // Reading header line and then getting index of possible columns
+            headers = Arrays.asList(headerLine.split(","));
+            int idIndex = headers.indexOf("ID");
+            int yearIndex = headers.indexOf("Year");
+            int capacityIndex = headers.indexOf("Capacity");
+            int carTypeIndex = headers.indexOf("Car Type");
+            int carsAvailableIndex = headers.indexOf("Cars Available");
+            int conditionIndex = headers.indexOf("Condition");
+            int colorIndex = headers.indexOf("Color");
+            int priceIndex = headers.indexOf("Price");
+            int vinIndex = headers.indexOf("VIN");
+            int transmissionIndex = headers.indexOf("Transmission");
+            int fuelTypeIndex = headers.indexOf("Fuel Type");
+            int modelIndex = headers.indexOf("Model");
+            int hasTurboIndex = headers.indexOf("hasTurbo");
+                
             while ((line = br.readLine()) != null) {
-                // Use comma as separator and trim potential whitespace
-                String[] carData = line.split(csvSplitBy);
+                String[] carFields = line.split(",");
 
-                // Create an instance of ConcreteCar for each line of data
-                ConcreteCar car = new ConcreteCar(
-                    Integer.parseInt(carData[0].trim()),
-                    carData[1].trim(),
-                    carData[2].trim(),
-                    carData[3].trim(),
-                    carData[4].trim(),
-                    Integer.parseInt(carData[5].trim()),
-                    Double.parseDouble(carData[6].trim()),
-                    carData[7].trim(),
-                    carData[8].trim(),
-                    carData[9].trim(),
-                    Double.parseDouble(carData[10].trim()),
-                    Integer.parseInt(carData[11].trim())
-                );
-                this.addCar(car);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public double carBought(User user, int carID) throws IOException{
-        BufferedReader reader = new BufferedReader(new FileReader("car_data.csv"));
-        BufferedWriter writer = new BufferedWriter(new FileWriter("tmp" + "car_data.csv"));
-
-        String line;
-        Boolean worked = false;
-        double carPrice = -1;
-        reader.readLine(); 
-        while ((line = reader.readLine()) != null) {
-            String[] parts = line.split(",");
-
-            int id = Integer.parseInt(parts[0]); // checking current line id to compare to given car id
-            if(id == carID){
-                int carQuantity = Integer.parseInt(parts[11]);
-                carPrice = Double.parseDouble(parts[10]);
-                if (carQuantity > 0 && user.getMoneyAvailable() >= carPrice) {
-                    parts[11] = String.valueOf(carQuantity - 1);
-                    worked = true;
+                // Determine if the "hasTurbo" field is available and properly listed in the current car entry
+                boolean hasTurbo = false; // Default to false
+                if (hasTurboIndex > -1 && hasTurboIndex < carFields.length) {
+                    String turboValue = carFields[hasTurboIndex].trim().toLowerCase();
+                    hasTurbo = turboValue.equals("yes"); // Sets hasTurbo to true if the value is "yes"
                 }
-            }
-        
-            // Write the modified line to the temporary file
-            writer.write(String.join(",", parts));
-            writer.newLine();
+                
+                
+                switch(carFields[carTypeIndex]){
+                    case "Hatchback":
+                        Car hatchback = new Hatchback(
+                            Integer.parseInt(carFields[idIndex]), 
+                            carFields[carTypeIndex],
+                            carFields[modelIndex], 
+                            carFields[conditionIndex], 
+                            carFields[colorIndex], 
+                            Integer.parseInt(carFields[capacityIndex]), 
+                            carFields[yearIndex], 
+                            carFields[fuelTypeIndex], 
+                            carFields[transmissionIndex], 
+                            carFields[vinIndex], 
+                            Double.parseDouble(carFields[priceIndex]), 
+                            Integer.parseInt(carFields[carsAvailableIndex]), 
+                            hasTurbo
+                        );
+                        this.addCar(hatchback);
+                        break;
+                    case "SUV":
+                        Car suv = new SUV(
+                            Integer.parseInt(carFields[idIndex]), 
+                            carFields[carTypeIndex],
+                            carFields[modelIndex], 
+                            carFields[conditionIndex], 
+                            carFields[colorIndex], 
+                            Integer.parseInt(carFields[capacityIndex]), 
+                            carFields[yearIndex], 
+                            carFields[fuelTypeIndex], 
+                            carFields[transmissionIndex], 
+                            carFields[vinIndex], 
+                            Double.parseDouble(carFields[priceIndex]), 
+                            Integer.parseInt(carFields[carsAvailableIndex]), 
+                            hasTurbo
+                        );
+                        this.addCar(suv);
+                        break;
+                    case "Sedan":
+                        Car sedan = new Sedan(
+                            Integer.parseInt(carFields[idIndex]), 
+                            carFields[carTypeIndex],
+                            carFields[modelIndex], 
+                            carFields[conditionIndex], 
+                            carFields[colorIndex], 
+                            Integer.parseInt(carFields[capacityIndex]), 
+                            carFields[yearIndex], 
+                            carFields[fuelTypeIndex], 
+                            carFields[transmissionIndex], 
+                            carFields[vinIndex], 
+                            Double.parseDouble(carFields[priceIndex]), 
+                            Integer.parseInt(carFields[carsAvailableIndex]), 
+                            hasTurbo
+                        );
+                        this.addCar(sedan);
+                        break;
+                    case "Pickup":
+                        Car pickup = new Pickup(
+                            Integer.parseInt(carFields[idIndex]), 
+                            carFields[carTypeIndex],
+                            carFields[modelIndex], 
+                            carFields[conditionIndex], 
+                            carFields[colorIndex], 
+                            Integer.parseInt(carFields[capacityIndex]), 
+                            carFields[yearIndex], 
+                            carFields[fuelTypeIndex], 
+                            carFields[transmissionIndex], 
+                            carFields[vinIndex], 
+                            Double.parseDouble(carFields[priceIndex]), 
+                            Integer.parseInt(carFields[carsAvailableIndex]), 
+                            hasTurbo
+                        );
+                        this.addCar(pickup);
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Unknown car type: " + carFields[carTypeIndex]);
+                }
+            } 
+        } finally {
+            br.close();
         }
-
-        reader.close();
-        writer.close();
-        if(worked)
-            return carPrice;
-        return -1;
     }
     /**
      * Displays the cars available in the inventory.
@@ -123,10 +170,8 @@ public class Inventory {
         }
     }
 
-    // Main method for testing
-    // public static void main(String[] args) {
-    //     Inventory inventory = new Inventory();
-    //     inventory.loadCarsFromCSV("car_data.csv");
-    //     inventory.displayInventory();
-    // }
+    // updateFile(){                    ,<---------------------------------------------------------------
+    //     write to new_car_data.csv
+    //     for loop of list
+
 }

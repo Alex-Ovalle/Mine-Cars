@@ -10,7 +10,7 @@ public class User extends Person {
     private boolean minerCarsMembership;
     private String username;
     private String password;
-    public static List<Ticket> tickets; // Field to store tickets
+    private static List<Ticket> tickets; // Field to store tickets
 
     // Constructor
     public User(String fullName, int ID, double moneyAvailable, int carsPurchased,
@@ -33,33 +33,36 @@ public class User extends Person {
         }
     }
     
-    /*public boolean purchaseCar(Inventory inventory, Car car) {
-        if (car.getPrice() <= this.moneyAvailable && car.isAvailable()) {
+    public void addTicket(Ticket ticket){
+        this.tickets.add(ticket);
+    }
+
+    public boolean purchaseCar(Car car) {
+        if (car.isAvailable() && (car.getPrice() <= this.moneyAvailable)) {
+            // update user and car values
             this.moneyAvailable -= car.getPrice();
             this.carsPurchased += 1;
-            inventory.removeCar(car.getId());
+            car.setCarsAvailable(car.getCarsAvailable() - 1);
     
             // Create and add a ticket
-            Ticket newTicket = new Ticket(car, new Date(), car.getPrice());
-            tickets.add(newTicket);
-    
+            Ticket newTicket = new Ticket(car); // ticket like this?
+            this.addTicket(newTicket);
             return true;
         }
         return false;
     }
-    */
+
+    public Car findCarByID(int id, Inventory inventory){
+        for (Car car: inventory.getAllCars()){
+            if (car.getId() == id)
+                return car;
+        }return null;
+    }
+
     // Method to view tickets
     public static List<Ticket> viewTickets() {
         return tickets;
     }
-    
-
-    // Method to login
-    //UserDatabase class, responsible for user management, including credential validation.
-    public boolean login(String username, String password, UserDatabase userDB) {
-        return userDB.validateCredentials(username, password);
-    }
-    
 
     // Getters and Setters
     public int getID() {

@@ -14,6 +14,7 @@ public class UserInterface{
     private String username;
     private String password;
     public static User user = new User("", -1, -1, -1, false, "", "");
+    public static Inventory inventory = new Inventory();
 
     public UserInterface(){     }
     
@@ -95,17 +96,16 @@ public class UserInterface{
 
     private void display_cars() {
         System.out.println("Displaying all cars...");
-        Inventory inventory = new Inventory();
-        
+        // here 
         for (Car car : inventory.getAllCars()) {
             System.out.println(car.getDetails() + "\n");
         }
-    }
+    }   
 
 
     private void filter_cars(int filter) {
         System.out.println("\nFiltering cars...");
-        Inventory inventory = new Inventory();
+        // here
         Log userLog = new Log(username);
 
         if(filter == 1){
@@ -131,33 +131,24 @@ public class UserInterface{
         System.out.println("Please enter car ID:");
         int carID = scanner.nextInt();
         scanner.nextLine();
-        Inventory inventory = new Inventory();
-        double carValue;
-        UserDatabase userDB = new UserDatabase();
 
-        try{
-            carValue = inventory.carBought(user, carID);
-            if(carValue != -1){
-                userDB.carBought(user, carValue);
-                System.out.println("You have purchased this car! Your new budget is: " + user.getMoneyAvailable());
-                Ticket newTicket = new Ticket(carID, new Date(), carValue);
-                User.tickets.add(newTicket);
-            }else{
-                System.out.println("You do not have the funds or this car is no longer available!");
-                show_menu();
-            }
-        }catch(IOException e){
-            System.out.println("An error occurred updating files: " + e.getMessage());
-            e.printStackTrace();
-        }
+        Car car = user.findCarByID(carID, inventory);
+        if(car == null)
+            System.out.println("The ID entered was either invalid or this car is no longer available.\nReturning to main menu.");    // Invalid id entry
+        
+        if(user.purchaseCar(car)){
+            System.out.println("Congratulations, you have purchased car: " + carID + "!\nYour new budget is: " + user.getMoneyAvailable());
+            Log userLog = new Log(username);
+            userLog.write_log(3); // <- make more specific?
+        }else
+            System.out.println("You do not have the funds or this car is no longer available!\n Returning to main menu.");    // eventually specify
     }
-
 
     
     private void view_tickets(){
         System.out.println("Viewing tickets...");
-        for(Ticket ticket: User.viewTickets()){
-            System.out.print(ticket + "\n");
+        for(Ticket ticket: user.viewTickets()){
+            System.out.print(ticket.printTicket() + "\n");
         }
     }
 }
