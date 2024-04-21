@@ -63,6 +63,7 @@ public class AdminInterface {
                 case 6:
                     System.out.println("Exiting Admin Panel.");
                     running = false;
+                    RunShop.main(new String[0]);
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -156,8 +157,8 @@ public class AdminInterface {
         int totalSold = 0;
         for (Car car : inventory.getAllCars()) {
             if (car.getType().equalsIgnoreCase(carType)) {
-                totalRevenue += car.getRevenueGenerated(); // Assuming getRevenueGenerated() is a method in Car class.
-                totalSold += car.getUnitsSold(); // Assuming getUnitsSold() is a method in Car class.
+                totalRevenue += car.getRevenueGenerated(); 
+                totalSold += car.getUnitsSold(); 
             }
         }
         if (totalSold > 0) {
@@ -167,6 +168,7 @@ public class AdminInterface {
             System.out.println("No cars sold of type: " + carType);
         }
     }
+
 
     /**
      * Removes a car from the dealership inventory.

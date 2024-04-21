@@ -117,12 +117,24 @@ public class Log {
             case 5:
                 output = "Signed out";
                 break;
+            case 8:
+                output = "added a car";
+                break;
+            case 9:
+                output = "removed a car";
+                break;
+            case 10:
+                output = "updated a car";
+                break;
+            case 11:
+                output = "retrieved revenue data";
+                break;
             default:
-                output = "input invalid";
+                output = "performed an unspecified admin action";
                 break;
         }
-        return output;
-    }
+        return output;    
+        }
 
     static {
         try {
@@ -148,6 +160,25 @@ public class Log {
             e.printStackTrace();
         }
     }
+
+/**
+ * Writes a detailed log entry to the log file with a custom message.
+ * This method allows for flexible logging of detailed actions, such as specific admin operations.
+ * 
+ * @param message The custom message to be logged, typically describing the action performed.
+ */
+public void writeDetailedLog(String message) {
+    try {
+        // Combine the current date and time, the current user, and the provided message into one log entry
+        logWriter.write(get_date_time() + " - " + currentUser + " - " + message + "\n");
+        // Flush immediately to ensure the entry is written to the file and not held in a buffer
+        logWriter.flush(); 
+    } catch (IOException e) {
+        // Handle potential I/O errors during the writing process
+        System.out.println("Error writing to log file: " + e.getMessage());
+    }
+}
+    
     
 }
 
