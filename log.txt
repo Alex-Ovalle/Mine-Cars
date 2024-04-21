@@ -196,12 +196,3 @@
 03:38:00 20-04-2024 - hermionegranger logged in
 03:38:02 20-04-2024 - hermionegranger purchased a car
 03:38:05 20-04-2024 - hermionegranger Signed out
-12:36:08 20-04-2024 - captainjacksparrow logged in
-12:36:09 20-04-2024 - captainjacksparrow displayed all cars
-12:36:29 20-04-2024 - captainjacksparrow purchased a car
-12:36:29 20-04-2024 - captainjacksparrow purchased a car
-12:36:35 20-04-2024 - captainjacksparrow viewed ticket
-12:36:42 20-04-2024 - captainjacksparrow Signed out
-12:46:50 20-04-2024 - captainjacksparrow logged in
-12:46:51 20-04-2024 - captainjacksparrow displayed all cars
-12:47:02 20-04-2024 - captainjacksparrow Signed out
