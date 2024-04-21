@@ -1,3 +1,7 @@
+/**
+ * The Person interface represents a person with a full name.
+ */
+
 public abstract class Person {  // make into interface that user and admin will use
     private String fullName;
 
@@ -6,12 +10,22 @@ public abstract class Person {  // make into interface that user and admin will 
         this.fullName = fullName;
     }
 
-    // Getter
+    /**
+     * Retrieves the full name of the person.
+     * 
+     * @return The full name of the person.
+     */
+
     public String getFullName() {
         return fullName;
     }
 
-    // Setter
+    /**
+     * Sets the full name of the person.
+     * 
+     * @param fullName The full name to set.
+     */
+    
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }

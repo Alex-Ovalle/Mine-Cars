@@ -18,49 +18,62 @@
  * instructor, TA, or IA was taken.
  */
 
-import java.time.LocalDateTime; // Import the LocalDateTime class
-import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter classimport java.io.File;  // Import the File class
-import java.io.File;  // Import the File class
-import java.io.FileWriter;   // Import the FileWriter class
-import java.io.IOException;  // Import the IOException class to handle errors
-import java.util.Scanner;
-import java.io.*;
-import java.util.*;
-
-
-public class RunShop {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("Welcome to Mine Cars Online");
-            System.out.println("Options:");
-            System.out.println("1. Login as User");
-            System.out.println("2. Login as Admin");
-            System.out.println("3. Exit");
-            System.out.print("Enter your choice: ");
-            while(true){
-                int choice = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
-
-                switch (choice){
-                    case 1:
-                        UserInterface ui = new UserInterface();
-                        ui.user_login();
-                        break;
-                    case 2:
-                        // adminInterface.login();
-                        System.out.println("In construction.");
-                        break;
-                    case 3:
-                        System.out.println("Thank you for visiting us, goodbye!\n");
-                        // updateCarFile();
-                        // updateUserFile();
-                        System.exit(0);
-                    default:
-                        System.out.println("Invalid choice. Please try again: ");
-                        break;
-                }
-            }
-        }
-    }
-}
+ import java.time.LocalDateTime; // Import the LocalDateTime class
+ import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter classimport java.io.File;  // Import the File class
+ import java.io.File;  // Import the File class
+ import java.io.FileWriter;   // Import the FileWriter class
+ import java.io.IOException;  // Import the IOException class to handle errors
+ import java.util.Scanner;
+ import java.io.*;
+ import java.util.*;
+ 
+ /**
+  * The main class to run the Mine Cars Online application.
+  */
+ public class RunShop {
+     
+     /**
+      * The main method to start the application.
+      * 
+      * @param args The command line arguments.
+      */
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         Inventory inventory = new Inventory(); 
+         UserDatabase userDatabase = new UserDatabase(); 
+         while (true) {
+             System.out.println("Welcome to Mine Cars Online");
+             System.out.println("Options:");
+             System.out.println("1. Login as User");
+             System.out.println("2. Login as Admin");
+             System.out.println("3. Exit");
+             System.out.print("Enter your choice: ");
+             while(true){
+                 int choice = scanner.nextInt();
+                 scanner.nextLine(); // Consume newline
+ 
+                 switch (choice){
+                     case 1:
+                         UserInterface ui = new UserInterface();
+                         ui.user_login();
+                         break;
+                     case 2:
+                         // adminInterface.login();
+                         // System.out.println("In construction.");
+                         AdminInterface ai = new AdminInterface(inventory, userDatabase);
+                         ai.adminAccess();
+                         break;
+                     case 3:
+                         System.out.println("Thank you for visiting us, goodbye!\n");
+                         // updateCarFile();
+                         // updateUserFile();
+                         System.exit(0);
+                     default:
+                         System.out.println("Invalid choice. Please try again: ");
+                         break;
+                 }
+             }
+         }
+     }
+ }
+ 

@@ -7,7 +7,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class Inventory {
+/**
+ * Class to manage inventory of cars.
+ */
+
+ public class Inventory {
     private List<Car> cars; // List to hold cars
     private List<String> headers; // List to hold order of header
 
@@ -15,35 +19,60 @@ public class Inventory {
     public Inventory() {
         this.cars = new ArrayList<>();
         try{
+            // Attempt to load car data from CSV file
             loadCarsFromCSV("car_data_new.csv");
         }catch (IOException e){
             e.printStackTrace();
-            System.out.println("An error occured reading car file.");
+            System.out.println("An error occurred reading the car file.");
         }
     }
     
-    // Add a car to the inventory
+    /**
+     * Adds a car to the inventory.
+     * 
+     * @param car The car to be added.
+     */
+
     public void addCar(Car car) {
         this.cars.add(car);
     }
 
-    // Remove a car from the inventory by ID        
-    public boolean removeCar(int carID) {                        // <-- needs updating
-        return cars.removeIf(car -> car.getId() == carID);
+    /**
+     * Removes a car from the inventory by ID.
+     * 
+     * @param carId The ID of the car to be removed.
+     * @return true if the car is removed successfully, false otherwise.
+     */     
+
+    public boolean removeCar(int carId) {
+        return cars.removeIf(car -> car.getId() == carId);
     }
 
-    // Get a list of all cars in the inventory
+    /**
+     * Retrieves a list of all cars in the inventory.
+     * 
+     * @return A list of all cars in the inventory.
+     */
+
     public List<Car> getAllCars() {
-        return new ArrayList<>(this.cars); // Returning a copy of the list to protect internal data
+        return new ArrayList<>(this.cars); // Return a copy of the list to protect internal data
     }
 
-    // Read car data from CSV file
+
+    /**
+     * Reads car data from CSV file.
+     * 
+     * @param csvFile The path to the CSV file.
+     * @throws IOException if an I/O error occurs.
+     */
+
     public void loadCarsFromCSV(String csvFile) throws IOException{
         String line;
         BufferedReader br = new BufferedReader(new FileReader(csvFile));
         try {
-            String headerLine = br.readLine();  // Reading header line and then getting index of possible columns
+            String headerLine = br.readLine();  // Read header line and then get index of possible columns
             headers = Arrays.asList(headerLine.split(","));
+            // Get index of each column in the CSV
             int idIndex = headers.indexOf("ID");
             int yearIndex = headers.indexOf("Year");
             int capacityIndex = headers.indexOf("Capacity");
@@ -65,10 +94,10 @@ public class Inventory {
                 boolean hasTurbo = false; // Default to false
                 if (hasTurboIndex > -1 && hasTurboIndex < carFields.length) {
                     String turboValue = carFields[hasTurboIndex].trim().toLowerCase();
-                    hasTurbo = turboValue.equals("yes"); // Sets hasTurbo to true if the value is "yes"
+                    hasTurbo = turboValue.equals("yes"); // Set hasTurbo to true if the value is "yes"
                 }
                 
-                
+                // Create car objects based on the type indicated in the CSV
                 switch(carFields[carTypeIndex]){
                     case "Hatchback":
                         Car hatchback = new Hatchback(
@@ -151,15 +180,78 @@ public class Inventory {
         }
     }
 
-    // Display all cars in the inventory
+    /**
+     * Displays all cars in the inventory.
+     */
+
     public void displayInventory() {
         for (Car car : this.cars) {
             System.out.println(car.getDetails());
         }
     }
 
-    // updateFile(){                    ,<---------------------------------------------------------------
-    //     write to new_car_data.csv
-    //     for loop of list
+    /**
+     * Sells a car.
+     * 
+     * @param carId The ID of the car to be sold.
+     * @return true if the car is sold successfully, false otherwise.
+     */
+    
+    public boolean sellCar(int carId) {
+        SalesVisitor salesVisitor = new SalesVisitor();
+        for (Car car : this.cars) {
+            if (car.getId() == carId && car.isAvailable()) {
+                salesVisitor.handleSale(car);
+                return true;
+            }
+        }
+        return false;
+    }
 
+     /**
+     * Reports revenue generated from car sales.
+     */
+
+    public void reportRevenue() {
+        SalesVisitor salesVisitor = new SalesVisitor();
+        for (Car car : this.cars) {
+            salesVisitor.handleSale(car);
+        }
+        System.out.println("Total Revenue: " + salesVisitor.getRevenue());
+    }
+    
+    /**
+     * Updates the file with inventory changes.
+     */
+    public void updateFile() {
+        try (FileWriter writer = new FileWriter("car_data_new.csv")) {
+            writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
+            for (Car car : cars) {
+                String turboString = car.getTurbo() ? "yes" : "no";
+                String carData = String.format("%d,%s,%s,%s,%s,%d,%s,%s,%s,%s,%.2f,%d,%s\n",
+                    car.getId(), car.getType(), car.getModel(), car.getCondition(), car.getColor(),
+                    car.getCapacity(), car.getYear(), car.getFuelType(), car.getTransmission(),
+                    car.getVin(), car.getPrice(), car.getCarsAvailable(), turboString);
+                writer.write(carData);
+            }
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Finds a car in the inventory by its ID.
+     * 
+     * @param carId The ID of the car to be found.
+     * @return The car object if found, null otherwise.
+     */
+
+    public Car findCarById(int carId) {
+        for (Car car : cars) {
+            if (car.getId() == carId) {
+                return car;
+            }
+        }
+        return null; // Return null if no car matches the ID
+    }
 }

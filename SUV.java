@@ -1,7 +1,8 @@
+/**
+ * Provides detailed information about the SUV.
+ * This class represents an SUV and implements the Car interface.
+ */
 public class SUV implements Car {
-    // Provides detailed information about the SUV.
-    // This method overrides the abstract method in the Car class.
-    // It compiles a string that includes all relevant details of the Harchback.
     private int id;
     private String type; // e.g., Sedan, SUV, Hatchback, Pickup
     private String model;
@@ -15,8 +16,26 @@ public class SUV implements Car {
     private double price;
     private int carsAvailable;
     private boolean hasTurbo;
+    private int unitsSold; // New field to track units sold
+    private double revenueGenerated; // New field to track revenue
 
-    // Constructor
+    /**
+     * Constructor to create an SUV object with specified attributes.
+     * 
+     * @param id The unique identifier of the SUV.
+     * @param type The type of the car (e.g., Sedan, SUV, Hatchback, Pickup).
+     * @param model The model of the SUV.
+     * @param condition The condition of the SUV (New or Used).
+     * @param color The color of the SUV.
+     * @param capacity The seating capacity of the SUV.
+     * @param year The manufacturing year of the SUV.
+     * @param fuelType The fuel type of the SUV.
+     * @param transmission The transmission type of the SUV.
+     * @param vin The Vehicle Identification Number (VIN) of the SUV.
+     * @param price The price of the SUV.
+     * @param carsAvailable The number of SUVs available in inventory.
+     * @param hasTurbo A boolean indicating whether the SUV has a turbocharger.
+     */
     public SUV(int id, String type, String model, String condition, String color, int capacity, 
                     String year, String fuelType, String transmission, String vin, 
                     double price, int carsAvailable, boolean hasTurbo) {
@@ -33,7 +52,46 @@ public class SUV implements Car {
         this.price = price;
         this.carsAvailable = carsAvailable;
         this.hasTurbo = hasTurbo;
+        this.unitsSold = 0;
+        this.revenueGenerated = 0.0;
     }
+    /**
+     * Records a sale of the SUV.
+     * If SUVs are available, increments the units sold and updates the revenue generated.
+     */
+
+    public void recordSale() {
+        if (this.carsAvailable > 0) {
+            this.unitsSold++;
+            this.revenueGenerated += this.price;
+            this.carsAvailable--;
+        }
+    }
+    /**
+     * Gets the total number of SUV units sold.
+     * 
+     * @return The total number of SUV units sold.
+     */
+
+    public int getUnitsSold() {
+        return this.unitsSold;
+    }
+
+    /**
+     * Gets the total revenue generated from SUV sales.
+     * 
+     * @return The total revenue generated from SUV sales.
+     */
+
+    public double getRevenueGenerated() {
+        return this.revenueGenerated;
+    }
+
+    /**
+     * Checks if the SUV is available in inventory.
+     * 
+     * @return True if the SUV is available, false otherwise.
+     */
 
     public boolean isAvailable() {
         return this.carsAvailable > 0;
@@ -143,6 +201,12 @@ public class SUV implements Car {
     public void setTurbo(boolean hasTurbo){
         this.hasTurbo = hasTurbo;
     }
+
+    /**
+     * Gets a string representation of the SUV's details.
+     * 
+     * @return A string containing the details of the SUV.
+     */
     
     public String getDetails() {
         return "Car Details:\n" +
@@ -160,8 +224,25 @@ public class SUV implements Car {
                "  Cars Available: " + getCarsAvailable() + "\n" +
                "  Has Turbo: " + (getTurbo() ? "Yes" : "No");
     }
+    
+    /**
+     * Generates a CSV representation of the SUV.
+     * 
+     * @return A string containing the CSV representation of the SUV.
+     */
 
     public String printCSV(){  // update
         return "CSV STRING";
+    }
+
+    /**
+     * Accepts a CarVisitor and invokes the visitSUV method on it.
+     * 
+     * @param visitor The CarVisitor to accept.
+     */
+
+    @Override
+    public void accept(CarVisitor visitor) {
+        visitor.visitSUV(this);
     }
 }
