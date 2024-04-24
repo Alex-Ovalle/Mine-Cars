@@ -215,22 +215,29 @@ public class Pickup implements Car {
      * @return Details about the pickup car.
      */
     
-    public String getDetails() {
-        return "Car Details:\n" +
-               "  Type: Pickup\n" +
-               "  ID: " + getId() + "\n" +
-               "  Model: " + getModel() + "\n" +
-               "  Condition: " + getCondition() + "\n" +
-               "  Color: " + getColor() + "\n" +
-               "  Capacity: " + getCapacity() + " passengers\n" +
-               "  Year: " + getYear() + "\n" +
-               "  Fuel Type: " + getFuelType() + "\n" +
-               "  Transmission: " + getTransmission() + "\n" +
-               "  VIN: " + getVin() + "\n" +
-               "  Price: $" + getPrice() + "\n" +
-               "  Cars Available: " + getCarsAvailable() + "\n" +
-               "  Has Turbo: " + (getTurbo() ? "Yes" : "No");
-    }
+     @Override
+     public String getDetails() {
+         return String.format(
+             "Car Details:\n" +
+             "  Type: %-10s\n" +
+             "  ID: %-10d\n" +
+             "  Model: %-20s\n" +
+             "  Condition: %-10s\n" +
+             "  Color: %-10s\n" +
+             "  Capacity: %-2d passengers\n" +
+             "  Year: %-4s\n" +
+             "  Fuel Type: %-10s\n" +
+             "  Transmission: %-10s\n" +
+             "  VIN: %-17s\n" +
+             "  Price: $%-10.2f\n" +
+             "  Cars Available: %-3d\n" +
+             "  Has Turbo: %-5s",
+             getType(), getId(), getModel(), getCondition(), getColor(), 
+             getCapacity(), getYear(), getFuelType(), getTransmission(), 
+             getVin(), getPrice(), getCarsAvailable(), getTurbo() ? "Yes" : "No"
+         );
+     }
+     
 
     /**
      * Retrieves a CSV representation of the pickup car.
