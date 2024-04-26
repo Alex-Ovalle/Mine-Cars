@@ -220,30 +220,28 @@ import java.util.Arrays;
         System.out.println("Total Revenue: " + salesVisitor.getRevenue());
     }
     
+
     /**
-     * Updates the file with inventory changes.
+     * Updates the file with inventory changes, formatting the output to align columns under their respective headers.
      */
-/**
- * Updates the file with inventory changes, formatting the output to align columns under their respective headers.
- */
-public void updateFile() {
-    try (FileWriter writer = new FileWriter("car_data_new.csv")) {
-        // Write headers
-        writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
-        
-        for (Car car : cars) {
-            String turboString = car.getTurbo() ? "yes" : "no";
-            // Format each line to ensure data aligns under the headers
-            String carData = String.format("%d,%s,%s,%s,%s,%d,%s,%s,%s,%s,%.2f,%d,%s\n",
-                car.getId(), car.getType(), car.getModel(), car.getCondition(), car.getColor(),
-                car.getCapacity(), car.getYear(), car.getFuelType(), car.getTransmission(),
-                car.getVin(), car.getPrice(), car.getCarsAvailable(), turboString);
-            writer.write(carData);
+    public void updateFile() {
+        try (FileWriter writer = new FileWriter("car_data_new.csv")) {
+            // Write headers
+            writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
+            
+            for (Car car : cars) {
+                String turboString = car.getTurbo() ? "yes" : "no";
+                // Format each line to ensure data aligns under the headers
+                String carData = String.format("%d,%s,%s,%s,%s,%d,%s,%s,%s,%s,%.2f,%d,%s\n",
+                    car.getId(), car.getType(), car.getModel(), car.getCondition(), car.getColor(),
+                    car.getCapacity(), car.getYear(), car.getFuelType(), car.getTransmission(),
+                    car.getVin(), car.getPrice(), car.getCarsAvailable(), turboString);
+                writer.write(carData);
+            }
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
         }
-    } catch (IOException e) {
-        System.out.println("Error writing to file: " + e.getMessage());
     }
-}
 
     /**
      * Finds a car in the inventory by its ID.

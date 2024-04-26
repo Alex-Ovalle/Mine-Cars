@@ -20,6 +20,8 @@ public class UserInterface{
     private String password;
     public static User user = new User("", -1, -1, -1, false, "", "");
     public static Inventory inventory = new Inventory();
+    public static UserDatabase userDB = new UserDatabase();
+
 
     /**
      * Constructs a new UserInterface object.
@@ -40,7 +42,6 @@ public class UserInterface{
         System.out.print("Password: ");
         password = scanner.nextLine();
         
-        UserDatabase userDB = new UserDatabase();
         try{
             if(userDB.initializeUser(user, username, password)){
 
@@ -103,6 +104,8 @@ public class UserInterface{
                 case 5:
                     userLog.write_log(5);
                     System.out.println("Signing out.\n");
+                    inventory.updateFile();
+                    userDB.updateUserFile(user);
                     RunShop.main(new String[0]);
                     break;
                 default:

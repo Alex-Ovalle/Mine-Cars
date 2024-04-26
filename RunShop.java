@@ -58,15 +58,11 @@
                          ui.user_login();
                          break;
                      case 2:
-                         // adminInterface.login();
-                         // System.out.println("In construction.");
                          AdminInterface ai = new AdminInterface(inventory, userDatabase);
                          ai.adminAccess();
                          break;
                      case 3:
                          System.out.println("Thank you for visiting us, goodbye!\n");
-                         // updateCarFile();
-                         // updateUserFile();
                          System.exit(0);
                      default:
                          System.out.println("Invalid choice. Please try again: ");

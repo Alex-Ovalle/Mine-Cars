@@ -206,3 +206,40 @@
 21:20:52 20-04-2024 - hermionegranger purchased a car
 21:20:52 20-04-2024 - hermionegranger purchased a car
 21:21:56 20-04-2024 - hermionegranger logged in
+13:24:44 24-04-2024 - wolverine logged in
+13:24:52 24-04-2024 - wolverine filtered by new cars
+13:24:57 24-04-2024 - wolverine displayed all cars
+13:25:05 24-04-2024 - wolverine purchased a car
+13:25:05 24-04-2024 - wolverine purchased a car
+13:25:38 24-04-2024 - wolverine viewed ticket
+13:25:48 24-04-2024 - wolverine Signed out
+15:47:52 24-04-2024 - atticusfinch logged in
+15:47:54 24-04-2024 - atticusfinch displayed all cars
+15:47:59 24-04-2024 - atticusfinch purchased a car
+15:47:59 24-04-2024 - atticusfinch purchased a car
+15:48:02 24-04-2024 - atticusfinch viewed ticket
+15:48:12 24-04-2024 - atticusfinch viewed ticket
+15:48:19 24-04-2024 - atticusfinch Signed out
+15:49:46 24-04-2024 - atticusfinch logged in
+15:49:48 24-04-2024 - atticusfinch purchased a car
+15:49:48 24-04-2024 - atticusfinch purchased a car
+15:49:50 24-04-2024 - atticusfinch viewed ticket
+15:49:53 24-04-2024 - atticusfinch Signed out
+15:52:40 24-04-2024 - atticusfinch logged in
+15:52:42 24-04-2024 - atticusfinch Signed out
+15:54:53 24-04-2024 - atticusfinch logged in
+15:54:55 24-04-2024 - atticusfinch Signed out
+15:55:15 24-04-2024 - atticusfinch logged in
+15:55:17 24-04-2024 - atticusfinch Signed out
+16:02:59 24-04-2024 - atticusfinch logged in
+16:03:02 24-04-2024 - atticusfinch purchased a car
+16:03:02 24-04-2024 - atticusfinch purchased a car
+16:03:03 24-04-2024 - atticusfinch viewed ticket
+16:03:05 24-04-2024 - atticusfinch Signed out
+16:14:24 24-04-2024 - atticusfinch logged in
+16:14:26 24-04-2024 - atticusfinch purchased a car
+16:14:26 24-04-2024 - atticusfinch purchased a car
+16:14:29 24-04-2024 - atticusfinch purchased a car
+16:14:31 24-04-2024 - atticusfinch viewed ticket
+16:14:34 24-04-2024 - atticusfinch viewed ticket
+16:14:35 24-04-2024 - atticusfinch Signed out

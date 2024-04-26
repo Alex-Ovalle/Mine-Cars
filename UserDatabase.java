@@ -8,6 +8,9 @@ import java.io.FileWriter;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.io.*;
+import java.util.*;
+
 
 /**
  * Represents a database to manage user data.
@@ -41,9 +44,8 @@ public class UserDatabase {
      * 
      * @param user The user whose data is to be saved.
      */
-
     private void saveUserToFile(User user) {
-        try (FileWriter writer = new FileWriter("user_data.csv", true)) {  // Set true for append mode
+        try (FileWriter writer = new FileWriter(USER_DATA_FILE, true)) {  // Set true for append mode
             String userData = String.format("%s,%d,%.2f,%d,%b,%s,%s\n",
                 user.getFullName(),
                 user.getID(),
@@ -106,6 +108,46 @@ public class UserDatabase {
             return false; // No login match returns false
         } finally {
             br.close();
+        }
+    }
+
+    public void updateUserFile(User user){
+        try (FileWriter writer = new FileWriter(USER_DATA_FILE + ".tmp");            
+        BufferedReader br = new BufferedReader(new FileReader(USER_DATA_FILE))){
+        
+            String line;
+            String headerLine = br.readLine();
+            List<String> headers = Arrays.asList(headerLine.split(","));
+            int idIndex = headers.indexOf("ID");
+            int moneyAvailableIndex = headers.indexOf("Money Available");
+            int carsPurchasedIndex = headers.indexOf("Cars Purchased");
+
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                
+                // Check if the line contains the target ID
+                if (Integer.parseInt(parts[idIndex]) == user.getID()) {
+                    // Replace the line with new values
+                    parts[moneyAvailableIndex] = String.valueOf(user.getMoneyAvailable());
+                    parts[carsPurchasedIndex] = String.valueOf(user.getCarsPurchased());
+                    line = String.join(",", parts);
+                }
+                
+                // Write the line to the temporary file
+                writer.write(line + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("There was an error updating user file");
+        }
+
+        // Rename the temporary file to the original file
+        File originalFile = new File(USER_DATA_FILE);
+        File tempFile = new File(USER_DATA_FILE + ".tmp");
+        if (tempFile.renameTo(originalFile)) {
+            System.out.println("Replacement successful.");
+        } else {
+            System.out.println("Failed to replace the file.");
         }
     }
 }
