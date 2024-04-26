@@ -51,7 +51,7 @@ public class Admin extends Person {
             inventory.addCar(updatedCar);
         }
     }
-
+  
     /**
      * Retrieves the admin ID.
      * 

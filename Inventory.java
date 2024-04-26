@@ -1,3 +1,8 @@
+/**
+* The inventory class lists all the cars available in the dealership,
+* adds and removes cars available.
+*/
+
 import java.util.ArrayList;
 import java.util.List;
 import java.io.BufferedReader;
@@ -10,10 +15,8 @@ import java.util.Arrays;
 /**
  * Class to manage inventory of cars.
  */
-
  public class Inventory {
     private List<Car> cars; // List to hold cars
-    private List<String> headers; // List to hold order of header
 
     // Constructor
     public Inventory() {
@@ -32,7 +35,6 @@ import java.util.Arrays;
      * 
      * @param car The car to be added.
      */
-
     public void addCar(Car car) {
         this.cars.add(car);
     }
@@ -53,11 +55,9 @@ import java.util.Arrays;
      * 
      * @return A list of all cars in the inventory.
      */
-
     public List<Car> getAllCars() {
         return new ArrayList<>(this.cars); // Return a copy of the list to protect internal data
     }
-
 
     /**
      * Reads car data from CSV file.
@@ -65,7 +65,6 @@ import java.util.Arrays;
      * @param csvFile The path to the CSV file.
      * @throws IOException if an I/O error occurs.
      */
-
     public void loadCarsFromCSV(String csvFile) throws IOException{
         String line;
         BufferedReader br = new BufferedReader(new FileReader(csvFile));
@@ -183,7 +182,6 @@ import java.util.Arrays;
     /**
      * Displays all cars in the inventory.
      */
-
     public void displayInventory() {
         for (Car car : this.cars) {
             System.out.println(car.getDetails());
