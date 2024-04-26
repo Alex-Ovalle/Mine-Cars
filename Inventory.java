@@ -2,15 +2,13 @@
 * The inventory class lists all the cars available in the dealership,
 * adds and removes cars available.
 */
-
-import java.util.ArrayList;
-import java.util.List;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Class to manage inventory of cars.
@@ -70,7 +68,7 @@ import java.util.Arrays;
         BufferedReader br = new BufferedReader(new FileReader(csvFile));
         try {
             String headerLine = br.readLine();  // Read header line and then get index of possible columns
-            headers = Arrays.asList(headerLine.split(","));
+            List<String> headers = Arrays.asList(headerLine.split(",")); // List to hold order of header
             // Get index of each column in the CSV
             int idIndex = headers.indexOf("ID");
             int yearIndex = headers.indexOf("Year");

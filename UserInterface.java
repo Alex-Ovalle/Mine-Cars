@@ -1,19 +1,11 @@
 import java.io.IOException;
-import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Date; 
-
+import java.util.Scanner; 
 
 /**
  * Represents the user interface for interacting with the system.
  * This class provides methods for user login, displaying menu options, filtering and purchasing cars,
  * and viewing tickets.
  */
-
 public class UserInterface{
 
     private String username;
