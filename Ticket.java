@@ -1,56 +1,86 @@
+/**
+ * Represents a ticket for a car purchase.
+ * This class stores information about the car ID, model, purchase amount,
+ * and the date of purchase.
+ */
 import java.time.LocalDateTime;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
+import java.time.format.DateTimeFormatter;
 
 public class Ticket {
-    // Attributes to store the car ID, model, purchase amount, and the date of purchase
-    private int carID;
-    private String carModel;
-    private double purchaseAmount;
-    private LocalDateTime purchaseDate;
-    private Car car;
+    private int carID; // The ID of the car
+    private String carModel; // The model of the car
+    private double purchaseAmount; // The amount paid for the purchase
+    private LocalDateTime purchaseDate; // The date and time of the purchase
+    private Car car; // The car associated with the ticket
 
-    // Constructor to initialize a new Ticket object with provided details
+    /**
+     * Constructs a new Ticket object with the provided car.
+     * Sets the purchase date to the current date and time.
+     * 
+     * @param car The car associated with the ticket.
+     */
     public Ticket(Car car) {
         this.car = car;
         setPurchaseDate();
     }
 
-    // Getter for car ID
+    /**
+     * Gets the ID of the car associated with the ticket.
+     * 
+     * @return The ID of the car.
+     */
     public int getCarID() {
         return carID;
     }
 
-    // Getter for car model
+    /**
+     * Gets the model of the car associated with the ticket.
+     * 
+     * @return The model of the car.
+     */
     public String getCarModel() {
         return carModel;
     }
 
-    // Getter for purchase amount
+    /**
+     * Gets the purchase amount paid for the car associated with the ticket.
+     * 
+     * @return The purchase amount.
+     */
     public double getPurchaseAmount() {
         return purchaseAmount;
     }
 
+    /**
+     * Sets the purchase date and time to the current date and time.
+     */
     public void setPurchaseDate(){
-        this.purchaseDate = purchaseDate.now();
+        this.purchaseDate = LocalDateTime.now();
     }
 
-    // Getter for purchase date
+    /**
+     * Gets the date and time of the car purchase.
+     * 
+     * @return The date and time of the purchase.
+     */
     public LocalDateTime getPurchaseDate() {
         return purchaseDate;
     }
 
-    // Method to print ticket in a formatted manner, displaying all relevant purchase details
+    /**
+     * Generates a formatted ticket with details of the car purchase.
+     * 
+     * @return A string representation of the ticket.
+     */
     public String printTicket() {
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy");
 
         // Printing the ticket with all details in a clear format
-        return("--------- TICKET ---------\n" +
-        "Car ID: " + this.car.getId() + 
-        "\nCar Model: " + this.car.getModel() +
-        "\nPurchase Amount: $" + String.format("%.2f", this.car.getPrice()) +
-        "\nPurchase Date: " + purchaseDate.format(myFormat) +
-        "\n--------------------------");
+        return "--------- TICKET ---------\n" +
+               "Car ID: " + this.car.getId() + 
+               "\nCar Model: " + this.car.getModel() +
+               "\nPurchase Amount: $" + String.format("%.2f", this.car.getPrice()) +
+               "\nPurchase Date: " + purchaseDate.format(myFormat) +
+               "\n--------------------------";
     }
 }
-

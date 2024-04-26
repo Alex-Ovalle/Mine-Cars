@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.util.Date; 
 
 
+/**
+ * Represents the user interface for interacting with the system.
+ * This class provides methods for user login, displaying menu options, filtering and purchasing cars,
+ * and viewing tickets.
+ */
 
 public class UserInterface{
 
@@ -15,9 +20,19 @@ public class UserInterface{
     private String password;
     public static User user = new User("", -1, -1, -1, false, "", "");
     public static Inventory inventory = new Inventory();
+    public static UserDatabase userDB = new UserDatabase();
+
+
+    /**
+     * Constructs a new UserInterface object.
+     */
 
     public UserInterface(){     }
     
+    /**
+     * Handles the user login process.
+     */
+
     public void user_login(){
         Scanner scanner = new Scanner(System.in);
 
@@ -27,7 +42,6 @@ public class UserInterface{
         System.out.print("Password: ");
         password = scanner.nextLine();
         
-        UserDatabase userDB = new UserDatabase();
         try{
             if(userDB.initializeUser(user, username, password)){
 
@@ -48,6 +62,10 @@ public class UserInterface{
             System.out.println("Error reading user data file.");
         }
     }
+
+    /**
+     * Displays the menu options for the user.
+     */
 
     public void show_menu(){
         Scanner scanner = new Scanner(System.in);
@@ -86,6 +104,8 @@ public class UserInterface{
                 case 5:
                     userLog.write_log(5);
                     System.out.println("Signing out.\n");
+                    inventory.updateFile();
+                    userDB.updateUserFile(user);
                     RunShop.main(new String[0]);
                     break;
                 default:
@@ -93,6 +113,10 @@ public class UserInterface{
             }
         }
     }
+
+    /**
+     * Displays all cars in the inventory.
+     */
 
     private void display_cars() {
         System.out.println("Displaying all cars...");
@@ -102,6 +126,11 @@ public class UserInterface{
         }
     }   
 
+    /**
+     * Filters cars based on their condition (used / new).
+     *
+     * @param filter The filter option chosen by the user.
+     */
 
     private void filter_cars(int filter) {
         System.out.println("\nFiltering cars...");
@@ -125,6 +154,10 @@ public class UserInterface{
         // Implementation to filter cars (used / new)
     }
 
+    /**
+     * Handles the process of purchasing a car.
+     */
+
     private void purchase_car(){
         System.out.println("Purchasing a car...");
         Scanner scanner = new Scanner(System.in);
@@ -144,6 +177,9 @@ public class UserInterface{
             System.out.println("You do not have the funds or this car is no longer available!\n Returning to main menu.");    // eventually specify
     }
 
+    /**
+     * Displays all tickets belonging to the user.
+     */
     
     private void view_tickets(){
         System.out.println("Viewing tickets...");

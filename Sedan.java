@@ -1,3 +1,8 @@
+/**
+ * The Sedan class represents a type of car, providing detailed information about Sedans.
+ * It implements the Car interface.
+ */
+
 public class Sedan implements Car {
     // Provides detailed information about the Sedan.
     // This method overrides the abstract method in the Car class.
@@ -15,8 +20,27 @@ public class Sedan implements Car {
     private double price;
     private int carsAvailable;
     private boolean hasTurbo;
+    private int unitsSold; // New field to track units sold
+    private double revenueGenerated; // New field to track revenue
 
-    // Constructor
+    /**
+     * Constructor to create a Sedan object with specified attributes.
+     * 
+     * @param id The unique identifier of the Sedan.
+     * @param type The type of the car (e.g., Sedan, SUV, Hatchback, Pickup).
+     * @param model The model of the Sedan.
+     * @param condition The condition of the Sedan (New or Used).
+     * @param color The color of the Sedan.
+     * @param capacity The seating capacity of the Sedan.
+     * @param year The manufacturing year of the Sedan.
+     * @param fuelType The fuel type of the Sedan.
+     * @param transmission The transmission type of the Sedan.
+     * @param vin The Vehicle Identification Number (VIN) of the Sedan.
+     * @param price The price of the Sedan.
+     * @param carsAvailable The number of Sedans available in inventory.
+     * @param hasTurbo A boolean indicating whether the Sedan has a turbocharger.
+     */
+
     public Sedan(int id, String type, String model, String condition, String color, int capacity, 
                     String year, String fuelType, String transmission, String vin, 
                     double price, int carsAvailable, boolean hasTurbo) {
@@ -33,6 +57,27 @@ public class Sedan implements Car {
         this.price = price;
         this.carsAvailable = carsAvailable;
         this.hasTurbo = hasTurbo;
+        this.unitsSold = 0;
+        this.revenueGenerated = 0.0;
+    }
+
+    /**
+     * Records a sale of the Sedan.
+     */
+    public void recordSale() {
+        if (this.carsAvailable > 0) {
+            this.unitsSold++;
+            this.revenueGenerated += this.price;
+            this.carsAvailable--;
+        }
+    }
+
+    public int getUnitsSold() {
+        return this.unitsSold;
+    }
+
+    public double getRevenueGenerated() {
+        return this.revenueGenerated;
     }
 
     public boolean isAvailable() {
@@ -143,25 +188,54 @@ public class Sedan implements Car {
     public void setTurbo(boolean hasTurbo){
         this.hasTurbo = hasTurbo;
     }
+
+    /**
+     * Returns a string containing details of the Sedan.
+     * 
+     * @return A string with Sedan details.
+     */
     
-    public String getDetails() {
-        return "Car Details:\n" +
-               "  Type: Sedan\n" +
-               "  ID: " + getId() + "\n" +
-               "  Model: " + getModel() + "\n" +
-               "  Condition: " + getCondition() + "\n" +
-               "  Color: " + getColor() + "\n" +
-               "  Capacity: " + getCapacity() + " passengers\n" +
-               "  Year: " + getYear() + "\n" +
-               "  Fuel Type: " + getFuelType() + "\n" +
-               "  Transmission: " + getTransmission() + "\n" +
-               "  VIN: " + getVin() + "\n" +
-               "  Price: $" + getPrice() + "\n" +
-               "  Cars Available: " + getCarsAvailable() + "\n" +
-               "  Has Turbo: " + (getTurbo() ? "Yes" : "No");
-    }
+     @Override
+     public String getDetails() {
+         return String.format(
+             "Car Details:\n" +
+             "  Type: %-10s\n" +
+             "  ID: %-10d\n" +
+             "  Model: %-20s\n" +
+             "  Condition: %-10s\n" +
+             "  Color: %-10s\n" +
+             "  Capacity: %-2d passengers\n" +
+             "  Year: %-4s\n" +
+             "  Fuel Type: %-10s\n" +
+             "  Transmission: %-10s\n" +
+             "  VIN: %-17s\n" +
+             "  Price: $%-10.2f\n" +
+             "  Cars Available: %-3d\n" +
+             "  Has Turbo: %-5s",
+             getType(), getId(), getModel(), getCondition(), getColor(), 
+             getCapacity(), getYear(), getFuelType(), getTransmission(), 
+             getVin(), getPrice(), getCarsAvailable(), getTurbo() ? "Yes" : "No"
+         );
+     }
+     
+
+    /**
+     * Generates a CSV representation of the Sedan.
+     * 
+     * @return A string containing the CSV representation of the Sedan.
+     */
 
     public String printCSV(){  // update
         return "CSV STRING";
+    }
+
+    /**
+     * Accepts a CarVisitor and calls the visitSedan method on it.
+     * 
+     * @param visitor The CarVisitor instance.
+     */
+    @Override
+    public void accept(CarVisitor visitor) {
+        visitor.visitSedan(this);
     }
 }

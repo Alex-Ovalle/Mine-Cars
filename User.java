@@ -1,18 +1,32 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date; 
 
-
+/**
+ * Represents a user in the car dealership system.
+ * This class extends the Person class and includes additional fields and methods
+ * specific to a user.
+ */
 public class User extends Person {
-    private int ID;
-    private double moneyAvailable;
-    private int carsPurchased;
-    private boolean minerCarsMembership;
-    private String username;
-    private String password;
+    private int ID; // The user's ID
+    private double moneyAvailable; // The amount of money available for purchasing cars
+    private int carsPurchased; // The number of cars purchased by the user
+    private boolean minerCarsMembership; // Indicates whether the user has a Mine Cars membership
+    private String username; // The username of the user
+    private String password; // The password of the user
     private static List<Ticket> tickets; // Field to store tickets
 
-    // Constructor
+    /**
+     * Constructs a new User object with the specified details.
+     * Initializes the list of tickets.
+     * 
+     * @param fullName The full name of the user.
+     * @param ID The ID of the user.
+     * @param moneyAvailable The amount of money available for purchasing cars.
+     * @param carsPurchased The number of cars purchased by the user.
+     * @param minerCarsMembership Indicates whether the user has a Mine Cars membership.
+     * @param username The username of the user.
+     * @param password The password of the user.
+     */
     public User(String fullName, int ID, double moneyAvailable, int carsPurchased,
                 boolean minerCarsMembership, String username, String password) {
         super(fullName);
@@ -25,7 +39,11 @@ public class User extends Person {
         this.tickets = new ArrayList<>(); // Initialize the tickets list
     }
 
-    // Method to view cars
+    /**
+     * Displays details of all cars available in the inventory.
+     * 
+     * @param inventory The inventory containing all cars.
+     */
     public void viewCars(Inventory inventory) {
         List<Car> cars = inventory.getAllCars();
         for (Car car : cars) {
@@ -33,38 +51,62 @@ public class User extends Person {
         }
     }
     
+    /**
+     * Adds a ticket to the user's list of tickets.
+     * 
+     * @param ticket The ticket to be added.
+     */
     public void addTicket(Ticket ticket){
         this.tickets.add(ticket);
     }
 
+    /**
+     * Purchases a car for the user if it is available and the user has sufficient funds.
+     * 
+     * @param car The car to be purchased.
+     * @return true if the purchase is successful, false otherwise.
+     */
     public boolean purchaseCar(Car car) {
         if (car.isAvailable() && (car.getPrice() <= this.moneyAvailable)) {
-            // update user and car values
+            // Update user and car values
             this.moneyAvailable -= car.getPrice();
             this.carsPurchased += 1;
             car.setCarsAvailable(car.getCarsAvailable() - 1);
     
             // Create and add a ticket
-            Ticket newTicket = new Ticket(car); // ticket like this?
+            Ticket newTicket = new Ticket(car);
             this.addTicket(newTicket);
             return true;
         }
         return false;
     }
 
+    /**
+     * Finds a car in the inventory based on its ID.
+     * 
+     * @param id The ID of the car to be found.
+     * @param inventory The inventory containing all cars.
+     * @return The car if found, null otherwise.
+     */
     public Car findCarByID(int id, Inventory inventory){
         for (Car car: inventory.getAllCars()){
             if (car.getId() == id)
                 return car;
-        }return null;
+        }
+        return null;
     }
 
-    // Method to view tickets
+    /**
+     * Retrieves the list of tickets associated with the user.
+     * 
+     * @return The list of tickets.
+     */
     public static List<Ticket> viewTickets() {
         return tickets;
     }
 
-    // Getters and Setters
+    // Getters and Setters for user attributes
+
     public int getID() {
         return ID;
     }
@@ -113,6 +155,4 @@ public class User extends Person {
         this.password = password;
     }
 
-    
 }
-
