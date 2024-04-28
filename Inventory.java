@@ -70,7 +70,7 @@ import java.util.Arrays;
         BufferedReader br = new BufferedReader(new FileReader(csvFile));
         try {
             String headerLine = br.readLine();  // Read header line and then get index of possible columns
-            headers = Arrays.asList(headerLine.split(","));
+            List<String> headers = Arrays.asList(headerLine.split(","));
             // Get index of each column in the CSV
             int idIndex = headers.indexOf("ID");
             int yearIndex = headers.indexOf("Year");

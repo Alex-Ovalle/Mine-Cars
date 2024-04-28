@@ -58,7 +58,10 @@ public class Hatchback implements Car {
         this.revenueGenerated = 0.0;
     }
 
-    // New method to record a sale
+    /**
+     * Records the sales
+     */
+    
     public void recordSale() {
         if (this.carsAvailable > 0) {
             this.unitsSold++;
