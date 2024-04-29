@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Class to manage inventory of cars.
@@ -86,90 +87,77 @@ import java.util.List;
                 
             while ((line = br.readLine()) != null) {
                 String[] carFields = line.split(",");
+                if (carFields.length < headers.size()) {
+                    System.out.println("Skipping incomplete or improperly formatted line: " + line);
+                    continue;  // Skip processing this line because it is incomplete
+                }
 
                 // Determine if the "hasTurbo" field is available and properly listed in the current car entry
-                boolean hasTurbo = false; // Default to false
-                if (hasTurboIndex > -1 && hasTurboIndex < carFields.length) {
-                    String turboValue = carFields[hasTurboIndex].trim().toLowerCase();
-                    hasTurbo = turboValue.equals("yes"); // Set hasTurbo to true if the value is "yes"
-                }
+
+                // boolean hasTurbo = false; // Default to false
+                // if (hasTurboIndex > -1 && hasTurboIndex < carFields.length) {
+                //     String turboValue = carFields[hasTurboIndex].trim().toLowerCase();
+                //     hasTurbo = turboValue.equals("yes"); // Set hasTurbo to true if the value is "yes"
+                // }
+                
+                boolean hasTurbo = hasTurboIndex > -1 && hasTurboIndex < carFields.length && "yes".equals(carFields[hasTurboIndex].trim().toLowerCase());
+                String carType = formatCarType(carFields[carTypeIndex].trim());  // Apply the formatCarType method
+
                 
                 // Create car objects based on the type indicated in the CSV
-                switch(carFields[carTypeIndex]){
-                    case "Hatchback":
-                        Car hatchback = new Hatchback(
-                            Integer.parseInt(carFields[idIndex]), 
-                            carFields[carTypeIndex],
-                            carFields[modelIndex], 
-                            carFields[conditionIndex], 
-                            carFields[colorIndex], 
-                            Integer.parseInt(carFields[capacityIndex]), 
-                            carFields[yearIndex], 
-                            carFields[fuelTypeIndex], 
-                            carFields[transmissionIndex], 
-                            carFields[vinIndex], 
-                            Double.parseDouble(carFields[priceIndex]), 
-                            Integer.parseInt(carFields[carsAvailableIndex]), 
-                            hasTurbo
-                        );
-                        this.addCar(hatchback);
-                        break;
-                    case "SUV":
-                        Car suv = new SUV(
-                            Integer.parseInt(carFields[idIndex]), 
-                            carFields[carTypeIndex],
-                            carFields[modelIndex], 
-                            carFields[conditionIndex], 
-                            carFields[colorIndex], 
-                            Integer.parseInt(carFields[capacityIndex]), 
-                            carFields[yearIndex], 
-                            carFields[fuelTypeIndex], 
-                            carFields[transmissionIndex], 
-                            carFields[vinIndex], 
-                            Double.parseDouble(carFields[priceIndex]), 
-                            Integer.parseInt(carFields[carsAvailableIndex]), 
-                            hasTurbo
-                        );
-                        this.addCar(suv);
-                        break;
-                    case "Sedan":
-                        Car sedan = new Sedan(
-                            Integer.parseInt(carFields[idIndex]), 
-                            carFields[carTypeIndex],
-                            carFields[modelIndex], 
-                            carFields[conditionIndex], 
-                            carFields[colorIndex], 
-                            Integer.parseInt(carFields[capacityIndex]), 
-                            carFields[yearIndex], 
-                            carFields[fuelTypeIndex], 
-                            carFields[transmissionIndex], 
-                            carFields[vinIndex], 
-                            Double.parseDouble(carFields[priceIndex]), 
-                            Integer.parseInt(carFields[carsAvailableIndex]), 
-                            hasTurbo
-                        );
-                        this.addCar(sedan);
-                        break;
-                    case "Pickup":
-                        Car pickup = new Pickup(
-                            Integer.parseInt(carFields[idIndex]), 
-                            carFields[carTypeIndex],
-                            carFields[modelIndex], 
-                            carFields[conditionIndex], 
-                            carFields[colorIndex], 
-                            Integer.parseInt(carFields[capacityIndex]), 
-                            carFields[yearIndex], 
-                            carFields[fuelTypeIndex], 
-                            carFields[transmissionIndex], 
-                            carFields[vinIndex], 
-                            Double.parseDouble(carFields[priceIndex]), 
-                            Integer.parseInt(carFields[carsAvailableIndex]), 
-                            hasTurbo
-                        );
-                        this.addCar(pickup);
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Unknown car type: " + carFields[carTypeIndex]);
+                try {
+                    Car car;
+                    switch(carType) {  // Now switch on the formatted carType
+                        case "Hatchback":
+                            car = new Hatchback(
+                                Integer.parseInt(carFields[idIndex]), carType,
+                                carFields[modelIndex], carFields[conditionIndex],
+                                carFields[colorIndex], Integer.parseInt(carFields[capacityIndex]),
+                                carFields[yearIndex], carFields[fuelTypeIndex],
+                                carFields[transmissionIndex], carFields[vinIndex],
+                                Double.parseDouble(carFields[priceIndex]),
+                                Integer.parseInt(carFields[carsAvailableIndex]), hasTurbo
+                            );
+                            break;
+                        case "SUV":
+                            car = new SUV(
+                                Integer.parseInt(carFields[idIndex]), carType,
+                                carFields[modelIndex], carFields[conditionIndex],
+                                carFields[colorIndex], Integer.parseInt(carFields[capacityIndex]),
+                                carFields[yearIndex], carFields[fuelTypeIndex],
+                                carFields[transmissionIndex], carFields[vinIndex],
+                                Double.parseDouble(carFields[priceIndex]),
+                                Integer.parseInt(carFields[carsAvailableIndex]), hasTurbo
+                            );
+                            break;
+                        case "Sedan":
+                            car = new Sedan(
+                                Integer.parseInt(carFields[idIndex]), carType,
+                                carFields[modelIndex], carFields[conditionIndex],
+                                carFields[colorIndex], Integer.parseInt(carFields[capacityIndex]),
+                                carFields[yearIndex], carFields[fuelTypeIndex],
+                                carFields[transmissionIndex], carFields[vinIndex],
+                                Double.parseDouble(carFields[priceIndex]),
+                                Integer.parseInt(carFields[carsAvailableIndex]), hasTurbo
+                            );
+                            break;
+                        case "Pickup":
+                            car = new Pickup(
+                                Integer.parseInt(carFields[idIndex]), carType,
+                                carFields[modelIndex], carFields[conditionIndex],
+                                carFields[colorIndex], Integer.parseInt(carFields[capacityIndex]),
+                                carFields[yearIndex], carFields[fuelTypeIndex],
+                                carFields[transmissionIndex], carFields[vinIndex],
+                                Double.parseDouble(carFields[priceIndex]),
+                                Integer.parseInt(carFields[carsAvailableIndex]), hasTurbo
+                            );
+                            break;
+                        default:
+                            continue; // Skip if the type is unknown
+                    }
+                    this.addCar(car);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Skipping entry with invalid data: " + e.getMessage());
                 }
             } 
         } finally {
@@ -215,22 +203,59 @@ import java.util.List;
         }
         System.out.println("Total Revenue: " + salesVisitor.getRevenue());
     }
+
+    // Ensures the first letter of every word is capatalize, before writting to the file
+    
+    private String capitalize(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+        return Arrays.stream(input.split("\\s"))
+                     .map(word -> word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase())
+                     .collect(Collectors.joining(" "));
+    }
+
+
+    private String formatCarType(String carType) {
+        if (carType == null) return null;
+    
+        switch (carType.toLowerCase()) {
+            case "suv":
+                return "SUV";
+            case "sedan":
+                return "Sedan";
+            case "pickup":
+                return "Pickup";
+            case "hatchback":
+                return "Hatchback";
+            default:
+                throw new IllegalArgumentException("Unknown car type: " + carType);
+        }
+    }
+    
     
 
     /**
      * Updates the file with inventory changes, formatting the output to align columns under their respective headers.
      */
-    public void updateFile() {
+    public void addCarToCSV() {
         try (FileWriter writer = new FileWriter("car_data_new.csv")) {
             // Write headers
             writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
             
             for (Car car : cars) {
                 String turboString = car.getTurbo() ? "yes" : "no";
+                // Apply capitalization to the appropriate fields
+                String carType = formatCarType(car.getType()); // ensures correct format from car type
+                String model = capitalize(car.getModel());
+                String condition = capitalize(car.getCondition());
+                String color = capitalize(car.getColor());
+                String fuelType = capitalize(car.getFuelType());
+                String transmission = capitalize(car.getTransmission());
                 // Format each line to ensure data aligns under the headers
                 String carData = String.format("%d,%s,%s,%s,%s,%d,%s,%s,%s,%s,%.2f,%d,%s\n",
-                    car.getId(), car.getType(), car.getModel(), car.getCondition(), car.getColor(),
-                    car.getCapacity(), car.getYear(), car.getFuelType(), car.getTransmission(),
+                    car.getId(), carType, model, condition, color,
+                    car.getCapacity(), car.getYear(), fuelType, transmission,
                     car.getVin(), car.getPrice(), car.getCarsAvailable(), turboString);
                 writer.write(carData);
             }
@@ -238,6 +263,38 @@ import java.util.List;
             System.out.println("Error writing to file: " + e.getMessage());
         }
     }
+
+
+    /**
+ * Removes a car from the CSV file by ID. Rewrites all the cars except for the one we removed.
+ * 
+ * @param carId The ID of the car to be removed.
+ */
+public void removeCarFromCSV(int carId) {
+    try (FileWriter writer = new FileWriter("car_data_new.csv", false)) {
+        writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
+        for (Car car : cars) {
+            if (car.getId() != carId) {
+                String turboString = car.getTurbo() ? "yes" : "no";
+                String carType = formatCarType(car.getType());
+                String model = capitalize(car.getModel());
+                String condition = capitalize(car.getCondition());
+                String color = capitalize(car.getColor());
+                String fuelType = capitalize(car.getFuelType());
+                String transmission = capitalize(car.getTransmission());
+
+                String carData = String.format("%d,%s,%s,%s,%s,%d,%s,%s,%s,%s,%.2f,%d,%s\n",
+                    car.getId(), carType, model, condition, color,
+                    car.getCapacity(), car.getYear(), fuelType, transmission,
+                    car.getVin(), car.getPrice(), car.getCarsAvailable(), turboString);
+                writer.write(carData);
+            }
+        }
+    } catch (IOException e) {
+        System.out.println("Error writing to file: " + e.getMessage());
+    }
+}
+
 
     /**
      * Finds a car in the inventory by its ID.

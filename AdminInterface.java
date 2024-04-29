@@ -122,6 +122,7 @@ public class AdminInterface {
                 return; // Exit the method if invalid type
         }
         inventory.addCar(newCar);
+        inventory.addCarToCSV();  // Immediately update the CSV file
         System.out.println("Car added successfully!");
     }
 
@@ -176,7 +177,13 @@ public class AdminInterface {
      * @param carId The ID of the car to be removed.
      */
     public void removeCarFromDealership(int carId) {
-        inventory.removeCar(carId);
+        boolean removed = inventory.removeCar(carId);
+        if (removed) {
+            inventory.removeCarFromCSV(carId);  // Update the CSV file immediately after removal
+            System.out.println("Car removed successfully and file updated.");
+        } else {
+            System.out.println("Car not found.");
+        }
     }
 
     /**

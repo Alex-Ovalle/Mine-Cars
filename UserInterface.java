@@ -96,7 +96,7 @@ public class UserInterface{
                 case 5:
                     userLog.write_log(5);
                     System.out.println("Signing out.\n");
-                    inventory.updateFile();
+                    inventory.addCarToCSV();;
                     userDB.updateUserFile(user);
                     RunShop.main(new String[0]);
                     break;
