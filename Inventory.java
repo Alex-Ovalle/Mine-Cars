@@ -3,13 +3,13 @@
 * adds and removes cars available.
 */
 
-import java.util.ArrayList;
-import java.util.List;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.util.ArrayList; //Import the ArrayList
+import java.util.List; //Import the List interface
+import java.io.BufferedReader; //Import the BufferedReader
+import java.io.BufferedWriter; //Import the BufferedWriter
+import java.io.FileReader; //Import the FileReader class
+import java.io.FileWriter; //Import the FieleWriter class 
+import java.io.IOException; //Import the IOException class to handle errors
 import java.util.Arrays;
 
 /**
