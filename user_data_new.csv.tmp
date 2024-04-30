@@ -6,7 +6,7 @@
 22545.97,#A2UjgVh,Holmes,6,0,Sherlock,sherlockholmes,TRUE
 48819.72,L8GKCj$A,Miller,7,0,Neo,neo,TRUE
 25338.27,3*Gts&4X,Jack Sparrow,8,0,Captain,captainjacksparrow,FALSE
-20186.13,3@H$PHpp,Finch,9,1,Atticus,atticusfinch,FALSE
+43657.68,3@H$PHpp,Finch,9,0,Atticus,atticusfinch,FALSE
 17855.2,YQoQ3LH3,T. Kirk,10,0,James,jamest.kirk,FALSE
 45137.8,SucLrbjh,Wilson,11,0,Wolverine,wolverine,FALSE
 35888.84,Qa8b!@)k,Williams,12,0,Gandalf,gandalf,FALSE
@@ -34,3 +34,4 @@
 36818.93,McxFb#wZ,Vader,34,0,Darth,darthvader,FALSE
 23411.2,KjHw49b0,Potter,35,0,Harry,harrypotter,TRUE
 35848.75,Lxt0JrZ%,Blaine,36,0,Rick,rickblaine,FALSE
+200000.0,3,Ovalle,37,0,Alex,alexo,TRUE

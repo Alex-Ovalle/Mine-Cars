@@ -58,7 +58,6 @@ public class UserInterface{
     /**
      * Displays the menu options for the user.
      */
-
     public void show_menu(){
         Scanner scanner = new Scanner(System.in);
         while (true){
@@ -109,12 +108,12 @@ public class UserInterface{
     /**
      * Displays all cars in the inventory.
      */
-
     private void display_cars() {
         System.out.println("Displaying all cars...");
-        // here 
+        System.out.println("--Type--------ID----------Model-----------------Condition---Color-------Capacity-------Year--FuelType----Transmission-Price---Capacity-Turbo?-");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------");
         for (Car car : inventory.getAllCars()) {
-            System.out.println(car.getDetails() + "\n");
+            System.out.println(car.getDetails());
         }
     }   
 
@@ -123,7 +122,6 @@ public class UserInterface{
      *
      * @param filter The filter option chosen by the user.
      */
-
     private void filter_cars(int filter) {
         System.out.println("\nFiltering cars...");
         // here
@@ -143,13 +141,11 @@ public class UserInterface{
             }
         }else
             System.out.println("Option invalid.\n");
-        // Implementation to filter cars (used / new)
     }
 
     /**
      * Handles the process of purchasing a car.
      */
-
     private void purchase_car(){
         System.out.println("Purchasing a car...");
         Scanner scanner = new Scanner(System.in);

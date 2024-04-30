@@ -207,27 +207,24 @@ public class SUV implements Car {
      * 
      * @return A string containing the details of the SUV.
      */
-    
      @Override
      public String getDetails() {
          return String.format(
-             "Car Details:\n" +
-             "  Type: %-10s\n" +
-             "  ID: %-10d\n" +
-             "  Model: %-20s\n" +
-             "  Condition: %-10s\n" +
-             "  Color: %-10s\n" +
-             "  Capacity: %-2d passengers\n" +
-             "  Year: %-4s\n" +
-             "  Fuel Type: %-10s\n" +
-             "  Transmission: %-10s\n" +
-             "  VIN: %-17s\n" +
-             "  Price: $%-10.2f\n" +
-             "  Cars Available: %-3d\n" +
-             "  Has Turbo: %-5s",
+             "  %-10s" +
+             "  %-10d" +
+             "  %-20s" +
+             "  %-10s" +
+             "  %-10s" +
+             "  %-2d passengers" +
+             "  %-4s" +
+             "  %-10s" +
+             "  %-10s" +
+             "  $%-10.2f" +
+             "  %-3d" +
+             "  %-5s",
              getType(), getId(), getModel(), getCondition(), getColor(), 
              getCapacity(), getYear(), getFuelType(), getTransmission(), 
-             getVin(), getPrice(), getCarsAvailable(), getTurbo() ? "Yes" : "No"
+             getPrice(), getCarsAvailable(), getTurbo() ? "Yes" : "No"
          );
      }
      

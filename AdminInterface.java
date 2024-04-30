@@ -61,7 +61,7 @@ public class AdminInterface {
                     purchaseCar();
                     break;
                 case 6:
-                    System.out.println("Exiting Admin Panel.");
+                    System.out.println("Exiting Admin Panel.\n");
                     running = false;
                     RunShop.main(new String[0]);
                     break;
@@ -158,7 +158,7 @@ public class AdminInterface {
         int totalSold = 0;
         for (Car car : inventory.getAllCars()) {
             if (car.getType().equalsIgnoreCase(carType)) {
-                totalRevenue += car.getRevenueGenerated(); 
+                totalRevenue += car.getRevenueGenerated();
                 totalSold += car.getUnitsSold(); 
             }
         }

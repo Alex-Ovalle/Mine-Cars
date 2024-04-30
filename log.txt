@@ -243,3 +243,66 @@
 16:14:31 24-04-2024 - atticusfinch viewed ticket
 16:14:34 24-04-2024 - atticusfinch viewed ticket
 16:14:35 24-04-2024 - atticusfinch Signed out
+02:12:31 29-04-2024 - alexo logged in
+02:12:39 29-04-2024 - alexo displayed all cars
+02:12:50 29-04-2024 - alexo purchased a car
+02:12:50 29-04-2024 - alexo purchased a car
+02:13:04 29-04-2024 - alexo purchased a car
+02:13:04 29-04-2024 - alexo purchased a car
+02:13:15 29-04-2024 - alexo purchased a car
+02:13:23 29-04-2024 - alexo purchased a car
+02:13:23 29-04-2024 - alexo purchased a car
+02:13:24 29-04-2024 - alexo viewed ticket
+02:13:36 29-04-2024 - alexo Signed out
+02:18:06 29-04-2024 - alexo logged in
+02:18:08 29-04-2024 - alexo viewed ticket
+02:18:14 29-04-2024 - alexo purchased a car
+02:18:14 29-04-2024 - alexo purchased a car
+02:18:18 29-04-2024 - alexo viewed ticket
+02:18:23 29-04-2024 - alexo Signed out
+02:22:00 29-04-2024 - alexo logged in
+02:22:01 29-04-2024 - alexo displayed all cars
+02:29:09 29-04-2024 - alexo Signed out
+02:29:16 29-04-2024 - alexo logged in
+02:29:18 29-04-2024 - alexo displayed all cars
+02:31:38 29-04-2024 - alexo Signed out
+02:31:49 29-04-2024 - alexo logged in
+02:31:50 29-04-2024 - alexo displayed all cars
+02:34:15 29-04-2024 - alexo viewed ticket
+02:34:25 29-04-2024 - alexo logged in
+02:34:26 29-04-2024 - alexo displayed all cars
+02:35:10 29-04-2024 - alexo Signed out
+02:37:17 29-04-2024 - alexo logged in
+02:37:18 29-04-2024 - alexo displayed all cars
+02:37:56 29-04-2024 - alexo Signed out
+02:38:03 29-04-2024 - alexo logged in
+02:38:04 29-04-2024 - alexo displayed all cars
+02:38:56 29-04-2024 - alexo logged in
+02:38:57 29-04-2024 - alexo displayed all cars
+19:45:05 29-04-2024 - alexo logged in
+19:45:07 29-04-2024 - alexo displayed all cars
+19:47:34 29-04-2024 - alexo Signed out
+19:47:43 29-04-2024 - alexo logged in
+19:47:44 29-04-2024 - alexo displayed all cars
+19:48:31 29-04-2024 - alexo Signed out
+19:48:38 29-04-2024 - alexo logged in
+19:48:38 29-04-2024 - alexo displayed all cars
+19:59:50 29-04-2024 - alexo Signed out
+19:59:56 29-04-2024 - alexo logged in
+19:59:57 29-04-2024 - alexo displayed all cars
+20:04:05 29-04-2024 - alexo Signed out
+20:04:11 29-04-2024 - alexo logged in
+20:04:11 29-04-2024 - alexo displayed all cars
+20:05:33 29-04-2024 - alexo Signed out
+20:05:38 29-04-2024 - alexo logged in
+20:05:40 29-04-2024 - alexo displayed all cars
+20:07:26 29-04-2024 - alexo Signed out
+20:07:33 29-04-2024 - alexo logged in
+20:07:34 29-04-2024 - alexo displayed all cars
+20:08:23 29-04-2024 - alexo Signed out
+20:08:45 29-04-2024 - alexo logged in
+20:08:46 29-04-2024 - alexo displayed all cars
+20:09:27 29-04-2024 - alexo Signed out
+20:09:36 29-04-2024 - alexo logged in
+20:09:37 29-04-2024 - alexo displayed all cars
+20:10:50 29-04-2024 - alexo Signed out

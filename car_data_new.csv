@@ -1,5 +1,5 @@
 ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo
-1,Hatchback,Honda Fit,New,Yellow,5,2005,Hybrid,Automatic,YNA6L2L65Z33P6C4O,23471.55,2,yes
+1,Hatchback,Honda Fit,New,Yellow,5,2005,Hybrid,Automatic,YNA6L2L65Z33P6C4O,23471.55,1,yes
 2,Sedan,Toyota Camry,New,Silver,5,2010,Diesel,Automatic,61J7MKYN8AUG05XV3,20688.35,5,yes
 3,SUV,Toyota Rav4,New,Green,5,2007,Gasoline,Automatic,FVCRJHUHZCEX8LCDC,33050.65,7,yes
 4,Sedan,Honda Accord,New,Blue,5,2002,Hybrid,Manual,R5T34D4J4R4B9AKWL,27905.26,6,yes
@@ -98,4 +98,5 @@ ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price
 97,SUV,Ford Explorer,New,White,7,2015,Hybrid,Manual,KC80RYGURZMRHS08X,46682.90,8,no
 98,Hatchback,Honda Fit,New,White,5,2019,Hybrid,Automatic,X4WP2WEBALSAODGAV,41473.52,10,no
 99,SUV,Chevrolet Tahoe,New,Yellow,8,2022,Hybrid,Automatic,GPJFC981TWNU72B51,33289.25,5,no
-100,Hatchback,Toyota Prius,New,Black,5,2023,Gasoline,Manual,7R8A7T8XAH9BKD0U4,24443.93,3,no
+100,Hatchback,Toyota Prius,New,Black,5,2023,Gasoline,Manual,7R8A7T8XAH9BKD0U4,24443.93,2,no
+101,SUV,Funny Car,New,Red,4,2024,Gasoline,Automatic,X4WP2WEBALSAODGAV,20000.00,0,yes

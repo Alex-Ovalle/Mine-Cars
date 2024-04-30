@@ -204,7 +204,7 @@ import java.util.stream.Collectors;
         System.out.println("Total Revenue: " + salesVisitor.getRevenue());
     }
 
-    // Ensures the first letter of every word is capatalize, before writting to the file
+    // Ensures the first letter of every word is capatalized, before writting to the file
     
     private String capitalize(String input) {
         if (input == null || input.isEmpty()) {
@@ -266,34 +266,34 @@ import java.util.stream.Collectors;
 
 
     /**
- * Removes a car from the CSV file by ID. Rewrites all the cars except for the one we removed.
- * 
- * @param carId The ID of the car to be removed.
- */
-public void removeCarFromCSV(int carId) {
-    try (FileWriter writer = new FileWriter("car_data_new.csv", false)) {
-        writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
-        for (Car car : cars) {
-            if (car.getId() != carId) {
-                String turboString = car.getTurbo() ? "yes" : "no";
-                String carType = formatCarType(car.getType());
-                String model = capitalize(car.getModel());
-                String condition = capitalize(car.getCondition());
-                String color = capitalize(car.getColor());
-                String fuelType = capitalize(car.getFuelType());
-                String transmission = capitalize(car.getTransmission());
+     * Removes a car from the CSV file by ID. Rewrites all the cars except for the one we removed.
+     * 
+     * @param carId The ID of the car to be removed.
+     */
+    public void removeCarFromCSV(int carId) {
+        try (FileWriter writer = new FileWriter("car_data_new.csv", false)) {
+            writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
+            for (Car car : cars) {
+                if (car.getId() != carId) {
+                    String turboString = car.getTurbo() ? "yes" : "no";
+                    String carType = formatCarType(car.getType());
+                    String model = capitalize(car.getModel());
+                    String condition = capitalize(car.getCondition());
+                    String color = capitalize(car.getColor());
+                    String fuelType = capitalize(car.getFuelType());
+                    String transmission = capitalize(car.getTransmission());
 
-                String carData = String.format("%d,%s,%s,%s,%s,%d,%s,%s,%s,%s,%.2f,%d,%s\n",
-                    car.getId(), carType, model, condition, color,
-                    car.getCapacity(), car.getYear(), fuelType, transmission,
-                    car.getVin(), car.getPrice(), car.getCarsAvailable(), turboString);
-                writer.write(carData);
+                    String carData = String.format("%d,%s,%s,%s,%s,%d,%s,%s,%s,%s,%.2f,%d,%s\n",
+                        car.getId(), carType, model, condition, color,
+                        car.getCapacity(), car.getYear(), fuelType, transmission,
+                        car.getVin(), car.getPrice(), car.getCarsAvailable(), turboString);
+                    writer.write(carData);
+                }
             }
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
         }
-    } catch (IOException e) {
-        System.out.println("Error writing to file: " + e.getMessage());
     }
-}
 
 
     /**

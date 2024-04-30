@@ -36,7 +36,7 @@ public class User extends Person {
         this.minerCarsMembership = minerCarsMembership;
         this.username = username;
         this.password = password;
-        this.tickets = new ArrayList<>(); // Initialize the tickets list
+        tickets = new ArrayList<>(); // Initialize the tickets list
     }
 
     /**
@@ -46,6 +46,7 @@ public class User extends Person {
      */
     public void viewCars(Inventory inventory) {
         List<Car> cars = inventory.getAllCars();
+        System.out.println("-----t--i--m--c--c--c--y--f--t--p--a--t-----");
         for (Car car : cars) {
             System.out.println(car.getDetails());
         }
@@ -57,7 +58,7 @@ public class User extends Person {
      * @param ticket The ticket to be added.
      */
     public void addTicket(Ticket ticket){
-        this.tickets.add(ticket);
+        tickets.add(ticket);
     }
 
     /**
