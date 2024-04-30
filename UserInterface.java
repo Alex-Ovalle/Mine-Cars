@@ -129,15 +129,19 @@ public class UserInterface{
 
         if(filter == 1){
             userLog.write_log(6);
+            System.out.println("--Type--------ID----------Model-----------------Condition---Color-------Capacity-------Year--FuelType----Transmission-Price---Capacity-Turbo?-");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------");
             for (Car car : inventory.getAllCars()){
                 if (car.getDetails().contains("New"))
-                    System.out.println(car.getDetails() + "\n");
+                    System.out.println(car.getDetails());
             }
         }else if(filter == 2){
             userLog.write_log(7);
+            System.out.println("--Type--------ID----------Model-----------------Condition---Color-------Capacity-------Year--FuelType----Transmission-Price---Capacity-Turbo?-");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------");
             for (Car car : inventory.getAllCars()){
                 if (car.getDetails().contains("Used"))
-                    System.out.println(car.getDetails() + "\n");
+                    System.out.println(car.getDetails());
             }
         }else
             System.out.println("Option invalid.\n");

@@ -306,3 +306,12 @@
 20:09:36 29-04-2024 - alexo logged in
 20:09:37 29-04-2024 - alexo displayed all cars
 20:10:50 29-04-2024 - alexo Signed out
+20:11:39 29-04-2024 - alexo logged in
+20:11:43 29-04-2024 - alexo filtered by new cars
+20:12:17 29-04-2024 - alexo Signed out
+20:12:23 29-04-2024 - alexo logged in
+20:12:25 29-04-2024 - alexo filtered by used cars
+20:13:05 29-04-2024 - alexo Signed out
+20:13:12 29-04-2024 - alexo logged in
+20:13:14 29-04-2024 - alexo filtered by new cars
+20:13:19 29-04-2024 - alexo filtered by used cars
