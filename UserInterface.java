@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.NoSuchElementException;
 import java.util.Scanner; 
 
 /**
@@ -14,11 +13,12 @@ public class UserInterface{
     public static User user = new User("", -1, -1, -1, false, "", "");
     public static Inventory inventory = new Inventory();
     public static UserDatabase userDB = new UserDatabase();
+    public Admin admin;
 
     /**
      * Constructs a new UserInterface object.
      */
-    public UserInterface(){     }
+    public UserInterface(Admin admin){ this.admin = admin; }
     
     /**
      * Handles the user login process.
@@ -173,12 +173,12 @@ public class UserInterface{
         if(car == null)
             System.out.println("The ID entered was either invalid or this car is no longer available.\nReturning to main menu.");    // Invalid id entry
         
-        if(user.purchaseCar(car)){
+        if(user.purchaseCar(car, admin)){
             System.out.println("Congratulations, you have purchased car: " + carID + "!\nYour new budget is: " + user.getMoneyAvailable());
             Log userLog = new Log(username);
             userLog.write_log(3);
         }else
-            System.out.println("You do not have the funds or this car is no longer available!\n Returning to main menu.");    // eventually specify
+            System.out.println("You do not have the funds or this car is no longer available!\nReturning to main menu.");    // eventually specify
     }
 
     /**

@@ -1,18 +1,42 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Represents an administrator extending the Person class.
  */
 public class Admin extends Person {
     private String adminID;
+    private List<Ticket> tickets; // Field to store tickets
 
     /**
      * Constructs an Admin object with a full name and admin ID.
      * 
      * @param fullName The full name of the admin.
      * @param adminID  The unique ID of the admin.
+     * @param adminID  The admin object.
      */
     public Admin(String fullName, String adminID) {
         super(fullName);
         this.adminID = adminID;
+        this.tickets = new ArrayList<>(); // Initialize the tickets list
+    }
+
+    /**
+     * Adds a ticket to the admin's list of tickets.
+     * 
+     * @param ticket The ticket to be added.
+     */
+    public void addTicket(Ticket ticket){
+        this.tickets.add(ticket);
+    }
+
+    /**
+     * Retrieves the list of tickets associated with the user.
+     * 
+     * @return The list of tickets.
+     */
+    public List<Ticket> viewTickets() {
+        return tickets;
     }
 
     /**

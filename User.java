@@ -69,7 +69,7 @@ public class User extends Person {
      * @param car The car to be purchased.
      * @return true if the purchase is successful, false otherwise.
      */
-    public boolean purchaseCar(Car car) {
+    public boolean purchaseCar(Car car, Admin admin) {
         // Update user and car values
         if (car.isAvailable() && (car.getPrice() <= this.moneyAvailable)) {
             double finalCarPrice = car.getPrice();
@@ -83,6 +83,7 @@ public class User extends Person {
             // Create and add a ticket
             Ticket newTicket = new Ticket(car);
             this.addTicket(newTicket);
+            admin.addTicket(newTicket);
             return true;
         }
         return false;

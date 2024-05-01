@@ -29,26 +29,8 @@ public class Ticket {
      * 
      * @return The ID of the car.
      */
-    public int getCarID() {
-        return carID;
-    }
-
-    /**
-     * Gets the model of the car associated with the ticket.
-     * 
-     * @return The model of the car.
-     */
-    public String getCarModel() {
-        return carModel;
-    }
-
-    /**
-     * Gets the purchase amount paid for the car associated with the ticket.
-     * 
-     * @return The purchase amount.
-     */
-    public double getPurchaseAmount() {
-        return purchaseAmount;
+    public Car getCar() {
+        return car;
     }
 
     /**
