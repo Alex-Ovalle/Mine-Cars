@@ -40,7 +40,6 @@ public class Pickup implements Car {
      * @param carsAvailable The number of Pickups available in inventory.
      * @param hasTurbo A boolean indicating whether the Pickup has a turbocharger.
      */
-    
     public Pickup(int id, String type, String model, String condition, String color, int capacity, 
                     String year, String fuelType, String transmission, String vin, 
                     double price, int carsAvailable, boolean hasTurbo) {
@@ -65,7 +64,6 @@ public class Pickup implements Car {
     /**
      * Records a sale of the pickup car.
      */
-
     public void recordSale() {
         if (this.carsAvailable > 0) {
             this.unitsSold++;
@@ -79,7 +77,6 @@ public class Pickup implements Car {
      * 
      * @return The number of units sold.
      */
-
     public int getUnitsSold() {
         return this.unitsSold;
     }
@@ -89,7 +86,6 @@ public class Pickup implements Car {
      * 
      * @return The revenue generated.
      */
-
     public double getRevenueGenerated() {
         return this.revenueGenerated;
     }
@@ -99,7 +95,6 @@ public class Pickup implements Car {
      * 
      * @return True if the car is available, false otherwise.
      */
-
     public boolean isAvailable() {
         return this.carsAvailable > 0;
     }
@@ -238,22 +233,11 @@ public class Pickup implements Car {
      
 
     /**
-     * Retrieves a CSV representation of the pickup car.
-     * 
-     * @return A CSV string representation of the pickup car.
-     */
-
-    public String printCSV(){  // update
-        return "CSV STRING";
-    }
-
-    /**
      * Accepts a CarVisitor and calls the visitPickup method with itself as the argument.
      * 
      * @param visitor The CarVisitor to accept.
      */
     @Override
-
     public void accept(CarVisitor visitor) {
         visitor.visitPickup(this);
     }

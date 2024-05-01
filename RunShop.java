@@ -42,8 +42,12 @@
              System.out.println("3. Exit");
              System.out.print("Enter your choice: ");
              while(true){
-                 int choice = scanner.nextInt();
-                 scanner.nextLine(); // Consume newline
+                while(!scanner.hasNextInt()) {
+                    scanner.next();
+                    System.out.println("Invalid choice. Please try again: ");
+                }
+                int choice = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
  
                  switch (choice){
                      case 1:

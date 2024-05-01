@@ -218,16 +218,6 @@ public class Sedan implements Car {
      
 
     /**
-     * Generates a CSV representation of the Sedan.
-     * 
-     * @return A string containing the CSV representation of the Sedan.
-     */
-
-    public String printCSV(){  // update
-        return "CSV STRING";
-    }
-
-    /**
      * Accepts a CarVisitor and calls the visitSedan method on it.
      * 
      * @param visitor The CarVisitor instance.

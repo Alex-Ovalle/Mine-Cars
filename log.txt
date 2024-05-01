@@ -315,3 +315,54 @@
 20:13:12 29-04-2024 - alexo logged in
 20:13:14 29-04-2024 - alexo filtered by new cars
 20:13:19 29-04-2024 - alexo filtered by used cars
+21:20:51 29-04-2024 - alexo Signed out
+14:22:41 30-04-2024 - alexo logged in
+14:22:59 30-04-2024 - alexo logged in
+14:25:28 30-04-2024 - alexo displayed all cars
+14:27:02 30-04-2024 - alexo logged in
+14:27:21 30-04-2024 - alexo Signed out
+14:27:28 30-04-2024 - alexo logged in
+14:27:52 30-04-2024 - alexo Signed out
+14:27:55 30-04-2024 - alexo logged in
+14:28:48 30-04-2024 - alexo Signed out
+14:28:57 30-04-2024 - alexo logged in
+14:29:20 30-04-2024 - alexo filtered by new cars
+14:29:27 30-04-2024 - alexo viewed ticket
+14:29:29 30-04-2024 - alexo Signed out
+17:24:05 30-04-2024 - alexo logged in
+17:24:09 30-04-2024 - alexo purchased a car
+17:24:21 30-04-2024 - alexo logged in
+17:24:23 30-04-2024 - alexo purchased a car
+17:24:23 30-04-2024 - alexo purchased a car
+17:28:37 30-04-2024 - alexo logged in
+17:28:40 30-04-2024 - alexo purchased a car
+17:28:40 30-04-2024 - alexo purchased a car
+17:30:38 30-04-2024 - alexo logged in
+17:30:41 30-04-2024 - alexo purchased a car
+17:30:41 30-04-2024 - alexo purchased a car
+17:32:07 30-04-2024 - alexo logged in
+17:32:08 30-04-2024 - alexo purchased a car
+17:32:08 30-04-2024 - alexo purchased a car
+17:34:42 30-04-2024 - alexo logged in
+17:34:44 30-04-2024 - alexo purchased a car
+17:34:44 30-04-2024 - alexo purchased a car
+17:35:24 30-04-2024 - alexo logged in
+17:35:26 30-04-2024 - alexo purchased a car
+17:35:26 30-04-2024 - alexo purchased a car
+17:35:42 30-04-2024 - alexo logged in
+17:35:54 30-04-2024 - alexo purchased a car
+17:35:54 30-04-2024 - alexo purchased a car
+17:37:20 30-04-2024 - alexo logged in
+17:37:23 30-04-2024 - alexo purchased a car
+17:37:23 30-04-2024 - alexo purchased a car
+17:37:51 30-04-2024 - alexo logged in
+17:37:53 30-04-2024 - alexo purchased a car
+17:37:53 30-04-2024 - alexo purchased a car
+17:41:32 30-04-2024 - alexo logged in
+17:41:38 30-04-2024 - alexo displayed all cars
+17:41:42 30-04-2024 - alexo filtered by used cars
+17:41:47 30-04-2024 - alexo purchased a car
+17:41:47 30-04-2024 - alexo purchased a car
+18:16:26 30-04-2024 - alexo logged in
+18:16:36 30-04-2024 - alexo purchased a car
+18:16:36 30-04-2024 - alexo purchased a car

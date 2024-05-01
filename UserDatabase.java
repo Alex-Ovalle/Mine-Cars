@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -15,7 +14,6 @@ import java.util.Map;
  */
 public class UserDatabase {
     private static final String USER_DATA_FILE = "user_data_new.csv"; // The file path for user data
-    private Map<String, String> userCredentials; // Maps username to password
     private List<User> users; // List to store user data
 
     /**

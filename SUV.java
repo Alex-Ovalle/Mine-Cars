@@ -228,16 +228,6 @@ public class SUV implements Car {
          );
      }
      
-    
-    /**
-     * Generates a CSV representation of the SUV.
-     * 
-     * @return A string containing the CSV representation of the SUV.
-     */
-
-    public String printCSV(){  // update
-        return "CSV STRING";
-    }
 
     /**
      * Accepts a CarVisitor and invokes the visitSUV method on it.

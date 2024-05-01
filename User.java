@@ -13,7 +13,10 @@ public class User extends Person {
     private boolean minerCarsMembership; // Indicates whether the user has a Mine Cars membership
     private String username; // The username of the user
     private String password; // The password of the user
-    private static List<Ticket> tickets; // Field to store tickets
+    private List<Ticket> tickets; // Field to store tickets
+    private static final double MEMBER_DISCOUNT = 0.90; // 10% discount
+    private static final double TEXAS_TAX_RATE = 1.0625; // 6.25% tax rate
+
 
     /**
      * Constructs a new User object with the specified details.
@@ -36,7 +39,7 @@ public class User extends Person {
         this.minerCarsMembership = minerCarsMembership;
         this.username = username;
         this.password = password;
-        tickets = new ArrayList<>(); // Initialize the tickets list
+        this.tickets = new ArrayList<>(); // Initialize the tickets list
     }
 
     /**
@@ -46,7 +49,6 @@ public class User extends Person {
      */
     public void viewCars(Inventory inventory) {
         List<Car> cars = inventory.getAllCars();
-        System.out.println("-----t--i--m--c--c--c--y--f--t--p--a--t-----");
         for (Car car : cars) {
             System.out.println(car.getDetails());
         }
@@ -58,7 +60,7 @@ public class User extends Person {
      * @param ticket The ticket to be added.
      */
     public void addTicket(Ticket ticket){
-        tickets.add(ticket);
+        this.tickets.add(ticket);
     }
 
     /**
@@ -68,9 +70,13 @@ public class User extends Person {
      * @return true if the purchase is successful, false otherwise.
      */
     public boolean purchaseCar(Car car) {
+        // Update user and car values
         if (car.isAvailable() && (car.getPrice() <= this.moneyAvailable)) {
-            // Update user and car values
-            this.moneyAvailable -= car.getPrice();
+            double finalCarPrice = car.getPrice();
+            if(this.isMinerCarsMembership())
+                this.moneyAvailable -= (finalCarPrice*MEMBER_DISCOUNT)*TEXAS_TAX_RATE;
+            else
+                this.moneyAvailable -= finalCarPrice*TEXAS_TAX_RATE;
             this.carsPurchased += 1;
             car.setCarsAvailable(car.getCarsAvailable() - 1);
     
@@ -102,7 +108,7 @@ public class User extends Person {
      * 
      * @return The list of tickets.
      */
-    public static List<Ticket> viewTickets() {
+    public List<Ticket> viewTickets() {
         return tickets;
     }
 

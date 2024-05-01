@@ -224,16 +224,7 @@ public class Hatchback implements Car {
             getPrice(), getCarsAvailable(), getTurbo() ? "Yes" : "No"
         );
     }
-    
-    /**
-     * Generates a CSV representation of the Hatchback.
-     * 
-     * @return A string containing the CSV representation of the Hatchback.
-     */
 
-    public String printCSV(){  // update
-        return "CSV STRING";
-    }
 
     @Override
     public void accept(CarVisitor visitor) {
