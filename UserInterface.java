@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Scanner; 
 
 /**
@@ -14,17 +15,14 @@ public class UserInterface{
     public static Inventory inventory = new Inventory();
     public static UserDatabase userDB = new UserDatabase();
 
-
     /**
      * Constructs a new UserInterface object.
      */
-
     public UserInterface(){     }
     
     /**
      * Handles the user login process.
      */
-
     public void user_login(){
         Scanner scanner = new Scanner(System.in);
 
@@ -52,13 +50,15 @@ public class UserInterface{
         }catch(IOException e){
             e.printStackTrace();
             System.out.println("Error reading user data file.");
+        }finally{
+            scanner.close();
         }
     }
 
     /**
      * Displays the menu options for the user.
      */
-    public void show_menu(){
+    public void show_menu() {
         Scanner scanner = new Scanner(System.in);
         while (true){
             System.out.println("1. Display all cars.");
@@ -67,6 +67,10 @@ public class UserInterface{
             System.out.println("4. View Tickets");
             System.out.println("5. Sign out");
             System.out.print("Enter your choice: ");
+            while(!scanner.hasNextInt()) {
+                scanner.next();
+                System.out.println("Invalid choice. Please try again: ");
+            }
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
             Log userLog = new Log(username);
@@ -80,6 +84,10 @@ public class UserInterface{
                     System.out.println("1. NEW cars");
                     System.out.println("2. USED cars");
                     System.out.println("3. return");
+                    while(!scanner.hasNextInt()) {
+                        scanner.next();
+                        System.out.println("Invalid choice. Please try again: ");
+                    }
                     int filterInt = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
                     filter_cars(filterInt);
@@ -123,7 +131,7 @@ public class UserInterface{
      * @param filter The filter option chosen by the user.
      */
     private void filter_cars(int filter) {
-        System.out.println("\nFiltering cars...");
+        System.out.println("Filtering cars...");
         // here
         Log userLog = new Log(username);
 
@@ -139,10 +147,10 @@ public class UserInterface{
             userLog.write_log(7);
             System.out.println("--Type--------ID----------Model-----------------Condition---Color-------Capacity-------Year--FuelType----Transmission-Price---Capacity-Turbo?-");
             System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------");
-            for (Car car : inventory.getAllCars()){
+            for (Car car : inventory.getAllCars())
                 if (car.getDetails().contains("Used"))
                     System.out.println(car.getDetails());
-            }
+            
         }else
             System.out.println("Option invalid.\n");
     }
@@ -154,6 +162,10 @@ public class UserInterface{
         System.out.println("Purchasing a car...");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter car ID:");
+        while(!scanner.hasNextInt()) {
+            scanner.nextLine();
+            System.out.println("Please input a number.");
+        }
         int carID = scanner.nextInt();
         scanner.nextLine();
 
@@ -164,7 +176,7 @@ public class UserInterface{
         if(user.purchaseCar(car)){
             System.out.println("Congratulations, you have purchased car: " + carID + "!\nYour new budget is: " + user.getMoneyAvailable());
             Log userLog = new Log(username);
-            userLog.write_log(3); // <- make more specific?
+            userLog.write_log(3);
         }else
             System.out.println("You do not have the funds or this car is no longer available!\n Returning to main menu.");    // eventually specify
     }

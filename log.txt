@@ -366,3 +366,28 @@
 18:16:26 30-04-2024 - alexo logged in
 18:16:36 30-04-2024 - alexo purchased a car
 18:16:36 30-04-2024 - alexo purchased a car
+18:23:01 30-04-2024 - alexo logged in
+18:23:02 30-04-2024 - alexo purchased a car
+18:23:02 30-04-2024 - alexo purchased a car
+18:23:25 30-04-2024 - alexo logged in
+18:23:28 30-04-2024 - alexo purchased a car
+18:23:28 30-04-2024 - alexo purchased a car
+18:24:43 30-04-2024 - alexo logged in
+18:24:45 30-04-2024 - alexo purchased a car
+18:24:45 30-04-2024 - alexo purchased a car
+18:24:52 30-04-2024 - alexo Signed out
+18:24:58 30-04-2024 - alexo logged in
+18:25:00 30-04-2024 - alexo purchased a car
+18:25:00 30-04-2024 - alexo purchased a car
+18:26:48 30-04-2024 - alexo Signed out
+18:26:52 30-04-2024 - alexo logged in
+18:26:55 30-04-2024 - alexo purchased a car
+18:27:14 30-04-2024 - alexo purchased a car
+18:27:14 30-04-2024 - alexo purchased a car
+18:27:20 30-04-2024 - alexo Signed out
+18:27:31 30-04-2024 - alexo logged in
+18:27:35 30-04-2024 - alexo purchased a car
+18:27:35 30-04-2024 - alexo purchased a car
+18:27:38 30-04-2024 - alexo purchased a car
+18:27:38 30-04-2024 - alexo purchased a car
+18:27:40 30-04-2024 - alexo Signed out

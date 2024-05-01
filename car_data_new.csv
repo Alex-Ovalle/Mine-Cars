@@ -97,6 +97,6 @@ ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price
 96,Pickup,Toyota Tacoma,Used,Red,5,2011,Diesel,Automatic,K0IZ1BWFOHRBTADSG,31446.39,9,no
 97,SUV,Ford Explorer,New,White,7,2015,Hybrid,Manual,KC80RYGURZMRHS08X,46682.90,8,no
 98,Hatchback,Honda Fit,New,White,5,2019,Hybrid,Automatic,X4WP2WEBALSAODGAV,41473.52,10,no
-99,SUV,Chevrolet Tahoe,New,Yellow,8,2022,Hybrid,Automatic,GPJFC981TWNU72B51,33289.25,5,no
-100,Hatchback,Toyota Prius,New,Black,5,2023,Gasoline,Manual,7R8A7T8XAH9BKD0U4,24443.93,2,no
+99,SUV,Chevrolet Tahoe,New,Yellow,8,2022,Hybrid,Automatic,GPJFC981TWNU72B51,33289.25,2,no
+100,Hatchback,Toyota Prius,New,Black,5,2023,Gasoline,Manual,7R8A7T8XAH9BKD0U4,24443.93,0,no
 101,SUV,Funny Car,New,Red,4,2024,Gasoline,Automatic,X4WP2WEBALSAODGAV,20000.00,0,yes
