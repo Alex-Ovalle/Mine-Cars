@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.io.*; 
 
 
 /**
@@ -116,7 +117,7 @@ public class UserDatabase {
             int idIndex = headers.indexOf("ID");
             int moneyAvailableIndex = headers.indexOf("Money Available");
             int carsPurchasedIndex = headers.indexOf("Cars Purchased");
-
+            writer.write("Money Available,Password,Last Name,ID,Cars Purchased,First Name,Username,MinerCars Membership\n");
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
                 
@@ -139,10 +140,30 @@ public class UserDatabase {
         // Rename the temporary file to the original file
         File originalFile = new File(USER_DATA_FILE);
         File tempFile = new File(USER_DATA_FILE + ".tmp");
-        if (tempFile.renameTo(originalFile)) {
-            System.out.println("Replacement successful.");
-        } else {
-            System.out.println("Failed to replace the file.");
+        try{
+            copyFileData(tempFile, originalFile);
+        }catch (Exception e){
+            System.out.println("There was an error replacing user file, ERROR: " + e.getMessage());
         }
     }
+
+    public void copyFileData(File a, File b)throws Exception 
+    { 
+        FileInputStream in = new FileInputStream(a); 
+        FileOutputStream out = new FileOutputStream(b); 
+        try { 
+            int n; 
+            while ((n = in.read()) != -1) 
+                out.write(n); 
+            
+        } 
+        finally { 
+            if (in != null) 
+                in.close(); 
+            
+            if (out != null) 
+                out.close(); 
+        } 
+    } 
+        
 }

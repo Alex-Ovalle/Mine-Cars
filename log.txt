@@ -391,3 +391,88 @@
 18:27:38 30-04-2024 - alexo purchased a car
 18:27:38 30-04-2024 - alexo purchased a car
 18:27:40 30-04-2024 - alexo Signed out
+18:37:06 30-04-2024 - alexo logged in
+18:44:50 30-04-2024 - alexo logged in
+18:44:53 30-04-2024 - alexo purchased a car
+18:44:53 30-04-2024 - alexo purchased a car
+18:45:03 30-04-2024 - alexo Signed out
+18:47:20 30-04-2024 - alexo logged in
+18:47:23 30-04-2024 - alexo purchased a car
+18:47:23 30-04-2024 - alexo purchased a car
+18:47:27 30-04-2024 - alexo Signed out
+18:47:40 30-04-2024 - alexo logged in
+18:47:42 30-04-2024 - alexo purchased a car
+18:47:42 30-04-2024 - alexo purchased a car
+18:47:49 30-04-2024 - alexo purchased a car
+18:47:49 30-04-2024 - alexo purchased a car
+18:47:52 30-04-2024 - alexo purchased a car
+18:47:57 30-04-2024 - alexo Signed out
+19:01:30 30-04-2024 - alexo logged in
+19:01:34 30-04-2024 - alexo purchased a car
+19:01:34 30-04-2024 - alexo purchased a car
+19:01:36 30-04-2024 - alexo purchased a car
+19:01:36 30-04-2024 - alexo purchased a car
+19:01:37 30-04-2024 - alexo purchased a car
+19:01:37 30-04-2024 - alexo purchased a car
+19:01:39 30-04-2024 - alexo purchased a car
+19:02:11 30-04-2024 - alexo viewed ticket
+19:02:17 30-04-2024 - alexo Signed out
+19:06:37 30-04-2024 - alexo logged in
+19:06:50 30-04-2024 - alexo purchased a car
+19:06:53 30-04-2024 - alexo purchased a car
+19:06:53 30-04-2024 - alexo purchased a car
+19:06:54 30-04-2024 - alexo purchased a car
+19:06:54 30-04-2024 - alexo purchased a car
+19:06:56 30-04-2024 - alexo purchased a car
+19:06:56 30-04-2024 - alexo purchased a car
+19:06:57 30-04-2024 - alexo purchased a car
+19:06:57 30-04-2024 - alexo purchased a car
+19:06:58 30-04-2024 - alexo purchased a car
+19:06:58 30-04-2024 - alexo purchased a car
+19:06:59 30-04-2024 - alexo purchased a car
+19:07:00 30-04-2024 - alexo purchased a car
+19:07:04 30-04-2024 - alexo viewed ticket
+19:07:10 30-04-2024 - alexo Signed out
+19:07:39 30-04-2024 - alexo logged in
+19:07:43 30-04-2024 - alexo purchased a car
+19:07:43 30-04-2024 - alexo purchased a car
+19:07:45 30-04-2024 - alexo viewed ticket
+19:07:47 30-04-2024 - alexo Signed out
+19:09:24 30-04-2024 - alexo logged in
+19:09:26 30-04-2024 - alexo viewed ticket
+19:09:29 30-04-2024 - alexo displayed all cars
+19:09:36 30-04-2024 - alexo purchased a car
+19:09:36 30-04-2024 - alexo purchased a car
+19:09:39 30-04-2024 - alexo Signed out
+19:17:46 30-04-2024 - alexo logged in
+19:17:49 30-04-2024 - alexo Signed out
+19:47:16 30-04-2024 - alexo logged in
+19:48:46 30-04-2024 - alexo logged in
+19:48:48 30-04-2024 - alexo displayed all cars
+19:48:52 30-04-2024 - alexo purchased a car
+19:48:52 30-04-2024 - alexo purchased a car
+19:48:55 30-04-2024 - alexo purchased a car
+19:48:55 30-04-2024 - alexo purchased a car
+19:48:56 30-04-2024 - alexo viewed ticket
+19:48:58 30-04-2024 - alexo Signed out
+19:49:35 30-04-2024 - alexo logged in
+19:49:36 30-04-2024 - alexo viewed ticket
+19:49:39 30-04-2024 - alexo purchased a car
+19:49:39 30-04-2024 - alexo purchased a car
+19:49:41 30-04-2024 - alexo purchased a car
+19:49:41 30-04-2024 - alexo purchased a car
+19:49:43 30-04-2024 - alexo viewed ticket
+19:49:46 30-04-2024 - alexo Signed out
+19:50:43 30-04-2024 - alexo logged in
+19:50:45 30-04-2024 - alexo purchased a car
+19:50:45 30-04-2024 - alexo purchased a car
+19:50:48 30-04-2024 - alexo viewed ticket
+19:50:48 30-04-2024 - alexo Signed out
+19:51:46 30-04-2024 - alexo logged in
+19:51:48 30-04-2024 - alexo purchased a car
+19:51:52 30-04-2024 - alexo purchased a car
+19:51:52 30-04-2024 - alexo purchased a car
+19:51:54 30-04-2024 - alexo purchased a car
+19:51:54 30-04-2024 - alexo purchased a car
+19:51:56 30-04-2024 - alexo viewed ticket
+19:52:03 30-04-2024 - alexo Signed out

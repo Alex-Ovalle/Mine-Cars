@@ -9,16 +9,17 @@ public class AdminInterface {
     private Scanner scanner;
     private static final double MEMBER_DISCOUNT = 0.10; // 10% discount
     private static final double TEXAS_TAX_RATE = 0.0625; // 6.25% tax rate
-
+    public Admin admin;
     /**
      * Constructs an AdminInterface object with the specified inventory and user database.
      * 
      * @param inventory     The inventory of cars.
      * @param userDatabase  The database of users.
      */
-    public AdminInterface(Inventory inventory, UserDatabase userDatabase) {
+    public AdminInterface(Inventory inventory, UserDatabase userDatabase, Admin admin) {
         this.inventory = inventory;
         this.userDatabase = userDatabase;
+        this.admin = admin;
         this.scanner = new Scanner(System.in);
     }
 
@@ -52,7 +53,7 @@ public class AdminInterface {
                 case 3:
                     System.out.print("Enter Car Type for Revenue Info: ");
                     String carType = scanner.nextLine();
-                    getRevenueByCarType(carType);
+                    getRevenue(carType);
                     break;
                 case 4:
                     addUser();
@@ -170,6 +171,29 @@ public class AdminInterface {
         }
     }
 
+    /**
+     * Retrieves and displays the total revenue and units sold for a specific car type.
+     * 
+     * @param carType The type of car.
+     */
+    public void getRevenue(String carType) {
+        double totalRevenue = 0;
+        int totalSold = 0;
+        for (Ticket ticket : admin.viewTickets()) {
+            Car car = ticket.getCar();
+            System.out.println(car.getId());
+            if (car.getType().equalsIgnoreCase(carType)) {
+                totalRevenue += car.getRevenueGenerated();
+                totalSold += 1; 
+            }
+        }
+        if (totalSold > 0) {
+            System.out.println("Total revenue for " + carType + "s: $" + totalRevenue);
+            System.out.println("Total number of " + carType + "s sold: " + totalSold);
+        } else {
+            System.out.println("No cars sold of type: " + carType);
+        }
+    }
 
     /**
      * Removes a car from the dealership inventory.

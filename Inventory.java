@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
         this.cars = new ArrayList<>();
         try{
             // Attempt to load car data from CSV file
-            loadCarsFromCSV("car_data_new.csv");
+            loadCarsFromCSV("car_data.csv");
         }catch (IOException e){
             e.printStackTrace();
             System.out.println("An error occurred reading the car file.");
@@ -87,10 +87,10 @@ import java.util.stream.Collectors;
                 
             while ((line = br.readLine()) != null) {
                 String[] carFields = line.split(",");
-                if (carFields.length < headers.size()) {
-                    System.out.println("Skipping incomplete or improperly formatted line: " + line);
-                    continue;  // Skip processing this line because it is incomplete
-                }
+                // if (carFields.length < headers.size()) {
+                //     System.out.println("Skipping incomplete or improperly formatted line: " + line);
+                //     continue;  // Skip processing this line because it is incomplete
+                // }
 
                 // Determine if the "hasTurbo" field is available and properly listed in the current car entry
 
@@ -239,7 +239,7 @@ import java.util.stream.Collectors;
      * Updates the file with inventory changes, formatting the output to align columns under their respective headers.
      */
     public void addCarToCSV() {
-        try (FileWriter writer = new FileWriter("car_data_new.csv")) {
+        try (FileWriter writer = new FileWriter("car_data.csv")) {
             // Write headers
             writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
             
@@ -271,7 +271,7 @@ import java.util.stream.Collectors;
      * @param carId The ID of the car to be removed.
      */
     public void removeCarFromCSV(int carId) {
-        try (FileWriter writer = new FileWriter("car_data_new.csv", false)) {
+        try (FileWriter writer = new FileWriter("car_data.csv", false)) {
             writer.write("ID,Car Type,Model,Condition,Color,Capacity,Year,Fuel Type,Transmission,VIN,Price,Cars Available,hasTurbo\n");
             for (Car car : cars) {
                 if (car.getId() != carId) {

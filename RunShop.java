@@ -34,6 +34,8 @@
          Scanner scanner = new Scanner(System.in);
          Inventory inventory = new Inventory(); 
          UserDatabase userDatabase = new UserDatabase(); 
+         Admin admin = new Admin("admin", "0");
+
          while (true) {
              System.out.println("Welcome to Mine Cars Online");
              System.out.println("Options:");
@@ -51,11 +53,11 @@
  
                  switch (choice){
                      case 1:
-                         UserInterface ui = new UserInterface();
+                         UserInterface ui = new UserInterface(admin);
                          ui.user_login();
                          break;
                      case 2:
-                         AdminInterface ai = new AdminInterface(inventory, userDatabase);
+                         AdminInterface ai = new AdminInterface(inventory, userDatabase, admin);
                          ai.adminAccess();
                          break;
                      case 3:
